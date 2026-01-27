@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chính Sách Bảo Hành - Hanabedding</title>
+    <meta name="description" content="Chính sách bảo hành giường bọc da Hanabedding - Bảo hành 5 năm khung giường, hỗ trợ tận tâm" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --white: #ffffff;
+        --bg-light: #faf9f7;
+        --bg-card: #fdfcfb;
+        --gold: #c9a66b;
+        --gold-light: #e5d4b3;
+        --gold-hover: #b8956c;
+        --brown: #1a1614;
+        --brown-light: #3d3229;
+        --text: #1a1614;
+        --text-muted: #6b5f54;
+        --border: #e8e2db;
+        --success: #10b981;
+        --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        --radius: 16px;
+        --radius-lg: 24px;
+        --gradient-gold: linear-gradient(135deg, #c9a66b 0%, #e5d4b3 50%, #c9a66b 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1614 0%, #3d3229 100%);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--white);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 36px;
+        border: none;
+        border-radius: 100px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        font-family: inherit;
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 0.3px;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--gradient-gold);
+        color: var(--brown);
+        font-weight: 700;
+        box-shadow: 0 4px 20px rgba(201, 166, 107, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(201, 166, 107, 0.5);
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(201, 166, 107, 0.1);
+        z-index: 1000;
+        padding: 12px 0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo img {
+        height: 75px;
+        width: auto;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .hotline {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        color: var(--brown);
+        font-size: 17px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .hotline:hover {
+        color: var(--gold);
+      }
+
+      .hotline-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--gradient-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brown);
+        font-size: 18px;
+        box-shadow: 0 4px 15px rgba(201, 166, 107, 0.4);
+      }
+
+      /* Policy Hero */
+      .policy-hero {
+        padding: 140px 0 80px;
+        background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .policy-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+      }
+
+      .policy-hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--brown);
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+      }
+
+      .policy-hero p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Policy Content */
+      .policy-content {
+        padding: 80px 0;
+        background: var(--white);
+      }
+
+      .policy-section {
+        background: var(--bg-card);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .policy-section:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .policy-section h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--brown);
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--gold-light);
+        position: relative;
+      }
+
+      .policy-section h2::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background: var(--gold);
+      }
+
+      .policy-section h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--brown);
+        margin: 25px 0 15px;
+      }
+
+      .policy-section p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 15px;
+      }
+
+      .policy-section ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 20px 0;
+      }
+
+      .policy-section li {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 12px;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      .policy-section li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--gold);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, rgba(201, 166, 107, 0.1), rgba(201, 166, 107, 0.05));
+        border-left: 4px solid var(--gold);
+        padding: 20px 25px;
+        border-radius: var(--radius);
+        margin: 25px 0;
+      }
+
+      .highlight-box p {
+        margin-bottom: 0;
+        font-weight: 500;
+      }
+
+      .warranty-badge {
+        display: inline-block;
+        background: var(--gradient-gold);
+        color: var(--brown);
+        padding: 10px 25px;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin: 10px 0;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--gradient-dark);
+        color: var(--white);
+        padding: 60px 40px;
+        border-radius: var(--radius-lg);
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .contact-section h2 {
+        color: var(--gold);
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .contact-item a {
+        color: var(--gold);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .contact-item a:hover {
+        color: var(--gold-light);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--brown);
+        color: rgba(255,255,255,0.8);
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer a {
+        color: var(--gold);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: var(--gold-light);
+      }
+
+      @media (max-width: 768px) {
+        .logo img {
+          height: 60px;
+        }
+
+        .hotline span:last-child {
+          display: none;
+        }
+
+        .policy-hero {
+          padding: 120px 0 60px;
+        }
+
+        .policy-hero h1 {
+          font-size: 2rem;
+        }
+
+        .policy-hero p {
+          font-size: 1rem;
+        }
+
+        .policy-section {
+          padding: 25px;
+        }
+
+        .policy-section h2 {
+          font-size: 1.5rem;
+        }
+
+        .contact-section {
+          padding: 40px 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/images/giuongbocda/logo.PNG" alt="Hanabedding Logo" />
+        </a>
+        <div class="header-right">
+          <a href="tel:19009147" class="hotline">
+            <div class="hotline-icon">📞</div>
+            <span>1900 9147</span>
+          </a>
+          <a href="index.html" class="btn btn-primary">Về Trang Chủ</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+      <div class="container">
+        <h1>Chính Sách Bảo Hành</h1>
+        <p>Cam kết chất lượng và dịch vụ hậu mãi tốt nhất cho khách hàng.</p>
+      </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="policy-content">
+      <div class="container">
+        
+        <!-- Section 1 -->
+        <div class="policy-section">
+          <h2>1) Phạm Vi Áp Dụng</h2>
+          <p>Chính sách bảo hành này áp dụng cho <strong>tất cả sản phẩm giường bọc da</strong> do <strong>Hanabedding</strong> sản xuất và phân phối chính thức trên toàn lãnh thổ Việt Nam.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="policy-section">
+          <h2>2) Thời Gian Bảo Hành</h2>
+          <div class="highlight-box">
+            <p><span class="warranty-badge">Bảo hành 5 năm</span> cho <strong>khung giường</strong> về các lỗi kỹ thuật: gãy, nứt, cong vênh do lỗi sản xuất.</p>
+          </div>
+          <div class="highlight-box">
+            <p><span class="warranty-badge">Bảo hành 24 tháng</span> cho <strong>phần bọc da</strong>: bong tróc, rách do lỗi sản xuất (không bao gồm hao mòn tự nhiên).</p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="policy-section">
+          <h2>3) Điều Kiện Bảo Hành</h2>
+          <ul>
+            <li>Sản phẩm còn trong thời hạn bảo hành.</li>
+            <li>Có hóa đơn mua hàng hoặc phiếu bảo hành hợp lệ.</li>
+            <li>Lỗi phát sinh do nhà sản xuất, không phải do người dùng.</li>
+            <li>Sản phẩm được sử dụng đúng mục đích và còn nguyên kết cấu.</li>
+          </ul>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="policy-section">
+          <h2>4) Trường Hợp Được Bảo Hành</h2>
+          <ul>
+            <li>Khung giường bị gãy, nứt, cong vênh do lỗi kỹ thuật sản xuất.</li>
+            <li>Phần bọc da bị bong tróc, rách do lỗi chất liệu hoặc kỹ thuật may.</li>
+            <li>Các chi tiết phụ kiện (ốc vít, chân giường) bị hỏng do lỗi sản xuất.</li>
+            <li>Sản phẩm không đúng với mô tả ban đầu về kích thước, màu sắc (phát hiện trong 7 ngày đầu).</li>
+          </ul>
+          <div class="highlight-box">
+            <p><strong>Lưu ý:</strong> Nếu lỗi không thể sửa chữa được, Hanabedding sẽ <strong>đổi sản phẩm mới tương đương</strong> hoặc <strong>hoàn tiền 100%</strong> theo yêu cầu của khách hàng (trong trường hợp bảo hành và chiếu ngược lại).</p>
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="policy-section">
+          <h2>5) Trường Hợp Không Được Bảo Hành (Lỗi Do Người Dùng/Ngoại Lực)</h2>
+          <ul>
+            <li>Sản phẩm bị hư hỏng do va đập mạnh, rơi vỡ, cháy nổ.</li>
+            <li>Bọc da bị trầy xước, rách do vật sắc nhọn, móng thú cưng, hóa chất tẩy rửa mạnh.</li>
+            <li>Khung giường bị biến dạng do chịu tải trọng vượt quá khả năng thiết kế.</li>
+            <li>Sản phẩm bị mốc, ẩm ướt do bảo quản không đúng cách (để nơi ẩm thấp, không thông thoáng).</li>
+            <li>Sản phẩm đã qua sửa chữa, tháo lắp bởi bên thứ ba không được Hanabedding ủy quyền.</li>
+            <li>Hao mòn tự nhiên theo thời gian sử dụng (phai màu nhẹ, nhăn da do tuổi thọ vật liệu).</li>
+            <li>Thiệt hại do thiên tai, hỏa hoạn, ngập lụt, sự kiện bất khả kháng.</li>
+          </ul>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="policy-section">
+          <h2>6) Chi Phí Bảo Hành & Hỗ Trợ</h2>
+          
+          <h3>Trong thời gian bảo hành (miễn phí)</h3>
+          <ul>
+            <li><strong>Miễn phí 100%</strong> chi phí sửa chữa, thay thế linh kiện lỗi.</li>
+            <li><strong>Miễn phí vận chuyển</strong> đi/về phục vụ bảo hành trong phạm vi <strong>≤ 50km</strong> từ kho/xưởng của công ty.</li>
+          </ul>
+
+          <h3>Ngoài phạm vi miễn phí vận chuyển</h3>
+          <div class="highlight-box">
+            <p>Khoảng cách <strong>> 50km</strong>: hỗ trợ <strong>20–30% phí ship</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="policy-section">
+          <h2>7) Quy Trình Tiếp Nhận Bảo Hành</h2>
+          
+          <h3>Bước 1: Liên hệ bảo hành</h3>
+          <p>Khách hàng gọi <strong>Hotline Bảo Hành</strong> hoặc nhắn tin qua <strong>Zalo/Facebook</strong> cung cấp: Mã đơn hàng + hình ảnh và video lỗi + địa chỉ.</p>
+
+          <h3>Bước 2: Xác nhận và đánh giá</h3>
+          <p>Bộ phận kỹ thuật xem xét hình ảnh/video, xác định nguyên nhân và phương án xử lý (sửa tại chỗ, đổi linh kiện, hoặc thu hồi sản phẩm nếu cần).</p>
+
+          <h3>Bước 3: Thực hiện bảo hành</h3>
+          <ul>
+            <li>Nếu sửa tại nhà: Kỹ thuật viên đến tận nơi trong <strong>2–5 ngày làm việc</strong> (tùy khu vực).</li>
+            <li>Nếu cần thu hồi: Hanabedding sẽ thu hồi sản phẩm về xưởng, sửa chữa và giao lại trong <strong>7–14 ngày</strong> (nếu có).</li>
+          </ul>
+
+          <h3>Bước 4: Hoàn tất và xác nhận</h3>
+          <p>Sau khi bảo hành xong, khách hàng kiểm tra và ký xác nhận hoàn tất bằng văn bản/tin nhắn.</p>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="policy-section">
+          <h2>8) Lưu Ý Quan Trọng</h2>
+          <ul>
+            <li>Khách hàng nên <strong>chụp ảnh/quay video</strong> sản phẩm khi nhận hàng để làm bằng chứng nếu có tranh chấp.</li>
+            <li><strong>Bảo quản hóa đơn/phiếu bảo hành</strong> cẩn thận để được hỗ trợ nhanh chóng.</li>
+            <li>Vệ sinh giường định kỳ bằng khăn mềm, tránh dùng hóa chất mạnh.</li>
+            <li>Đặt giường ở nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.</li>
+            <li>Không nhảy nhót, đứng lên giường; không kéo lê khi di chuyển.</li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+          <h2>Thông Tin Liên Hệ Bảo Hành</h2>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span>📞 HOTLINE:</span>
+              <a href="tel:19009147">1900 9147</a>
+            </div>
+            <div class="contact-item">
+              <span>💬 SĐT/ZALO:</span>
+              <a href="tel:0764265775">076 426 5775</a>
+            </div>
+            <div class="contact-item">
+              <span>📧 EMAIL:</span>
+              <a href="mailto:mkt.hanabedding@gmail.com">mkt.hanabedding@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <span>🏢 ĐỊA CHỈ:</span>
+              <span>361 Nguyễn Kim Cương, Củ Chi, TP. Hồ Chí Minh</span>
+            </div>
+          </div>
+          <p style="margin-top: 30px; font-size: 1.1rem;">
+            <strong>Hanabedding</strong> - Cam kết mang đến sản phẩm chất lượng và dịch vụ hậu mãi tốt nhất!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Hanabedding. Tất cả quyền được bảo lưu.</p>
+        <p style="margin-top: 10px;">
+          <a href="index.html">Trang chủ</a> | 
+          <a href="chinh-sach-bao-hanh.html">Chính sách bảo hành</a> | 
+          <a href="chinh-sach-giao-lap.html">Chính sách giao lắp</a>
+        </p>
+        <p style="margin-top: 15px; font-size: 0.9rem;">
+          📞 Hotline: <a href="tel:19009147">1900 9147</a> | 
+          💬 Zalo: <a href="tel:0764265775">076 426 5775</a><br>
+          📧 <a href="mailto:mkt.hanabedding@gmail.com">mkt.hanabedding@gmail.com</a><br>
+          🏢 361 Nguyễn Kim Cương, Củ Chi, TP. Hồ Chí Minh
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
