@@ -836,6 +836,72 @@
         box-shadow: 0 8px 25px rgba(26, 22, 20, 0.3);
       }
 
+      /* Size Selection in Product Details */
+      .product-details .size-section {
+        margin-bottom: 35px;
+      }
+
+      .product-details .size-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+
+      .size-option {
+        position: relative;
+      }
+
+      .size-option input {
+        display: none;
+      }
+
+      .size-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 12px;
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .size-btn:hover {
+        border-color: var(--gold);
+      }
+
+      .size-option input:checked + .size-btn {
+        border-color: var(--gold);
+        background: linear-gradient(135deg, rgba(201, 166, 107, 0.08), rgba(201, 166, 107, 0.02));
+        box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.12);
+      }
+
+      .size-btn .size {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--brown);
+        margin-bottom: 4px;
+      }
+
+      .size-btn .price {
+        font-size: 14px;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      @media (max-width: 968px) {
+        .product-details .size-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .product-details .size-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       .cta-section {
         margin-top: 40px;
       }
@@ -1406,20 +1472,6 @@
       .size-btn .price {
         font-size: 14px;
         color: var(--gold);
-        font-weight: 600;
-      }
-
-      .size-option.popular .size-btn::before {
-        content: "Phổ biến";
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--gold);
-        color: white;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-size: 11px;
         font-weight: 600;
       }
 
@@ -2633,11 +2685,6 @@
           font-size: 12px;
         }
 
-        .size-option.popular .size-btn::before {
-          padding: 3px 8px;
-          font-size: 10px;
-        }
-
         .price-display {
           padding: 18px;
         }
@@ -2869,6 +2916,62 @@
               </div>
             </div>
 
+            <!-- Size Selector -->
+            <div class="size-section">
+              <div class="section-label">Chọn kích thước:</div>
+              <div class="size-grid">
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="1m x 2m" data-price="3099000">
+                  <div class="size-btn">
+                    <span class="size">1m x 2m</span>
+                    <span class="price">3.099.000đ</span>
+                  </div>
+                </label>
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="1m2 x 2m" data-price="3299000">
+                  <div class="size-btn">
+                    <span class="size">1m2 x 2m</span>
+                    <span class="price">3.299.000đ</span>
+                  </div>
+                </label>
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="1m4 x 2m" data-price="3499000">
+                  <div class="size-btn">
+                    <span class="size">1m4 x 2m</span>
+                    <span class="price">3.499.000đ</span>
+                  </div>
+                </label>
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="1m6 x 2m" data-price="3699000" checked>
+                  <div class="size-btn">
+                    <span class="size">1m6 x 2m</span>
+                    <span class="price">3.699.000đ</span>
+                  </div>
+                </label>
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="1m8 x 2m" data-price="3999000">
+                  <div class="size-btn">
+                    <span class="size">1m8 x 2m</span>
+                    <span class="price">3.999.000đ</span>
+                  </div>
+                </label>
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="2m x 2m" data-price="4499000">
+                  <div class="size-btn">
+                    <span class="size">2m x 2m</span>
+                    <span class="price">4.499.000đ</span>
+                  </div>
+                </label>
+                <label class="size-option">
+                  <input type="radio" name="bedSize" value="2m2 x 2m" data-price="4999000">
+                  <div class="size-btn">
+                    <span class="size">2m2 x 2m</span>
+                    <span class="price">4.999.000đ</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
             <!-- CTA Button -->
             <div class="cta-section">
               <a href="#orderPanel" class="btn btn-primary btn-cta">🛒 Đặt Hàng Ngay</a>
@@ -2914,7 +3017,7 @@
                   <span class="price">3.499.000đ</span>
                 </div>
               </label>
-              <label class="size-option popular">
+              <label class="size-option">
                 <input type="radio" name="bedSize" value="1m6 x 2m" data-price="3699000" checked>
                 <div class="size-btn">
                   <span class="size">1m6 x 2m</span>
@@ -3036,11 +3139,6 @@
             <div class="benefit-icon">🛡️</div>
             <h4>Bảo Hành 24 Tháng</h4>
             <p>Cam kết bảo hành chính hãng</p>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">🔄</div>
-            <h4>Đổi Trả 30 Ngày</h4>
-            <p>Đổi trả miễn phí nếu lỗi</p>
           </div>
         </div>
       </div>
@@ -3305,6 +3403,8 @@
           updateProductImage();
           updateOrderPanel();
           updateThumbnailImages();
+          updateSizeOptionPrices(); // Update size option prices display
+          updateAllPrices(); // Update prices when model changes
         });
       });
 
@@ -3369,7 +3469,7 @@
         
         const selectedSize = document.querySelector('input[name="bedSize"]:checked');
         const sizeText = selectedSize ? selectedSize.value : "1m6 x 2m";
-        const priceValue = selectedSize ? parseInt(selectedSize.dataset.price) : 3699000;
+        const priceValue = calculatePrice(); // Use calculated price with model surcharge
         
         if (summaryProductName) summaryProductName.textContent = "Giường Bọc Da - " + products[currentModel].name;
         if (summaryDetails) summaryDetails.textContent = "Màu " + colorLabels[currentColor] + " / " + sizeText;
@@ -3459,12 +3559,50 @@
       // ===== SIZE SELECTION =====
       const sizeInputs = document.querySelectorAll('input[name="bedSize"]');
       const totalPrice = document.getElementById("totalPrice");
+      const displayPrice = document.getElementById("displayPrice");
+
+      // Function to calculate price based on size and model
+      function calculatePrice() {
+        const selectedSize = document.querySelector('input[name="bedSize"]:checked');
+        if (!selectedSize) return 3699000; // default price
+        
+        const basePrice = parseInt(selectedSize.dataset.price);
+        const activeModel = document.querySelector('.model-btn.active');
+        const modelNumber = activeModel ? activeModel.dataset.model : "2";
+        
+        // Add 500k if model is "3" (Trơn)
+        const finalPrice = modelNumber === "3" ? basePrice + 500000 : basePrice;
+        return finalPrice;
+      }
+
+      // Function to update size option prices display
+      function updateSizeOptionPrices() {
+        const activeModel = document.querySelector('.model-btn.active');
+        const modelNumber = activeModel ? activeModel.dataset.model : "2";
+        const surcharge = modelNumber === "3" ? 500000 : 0;
+        
+        // Update all size option price displays
+        sizeInputs.forEach(input => {
+          const basePrice = parseInt(input.dataset.price);
+          const displayPrice = basePrice + surcharge;
+          const priceSpan = input.parentElement.querySelector('.price');
+          if (priceSpan) {
+            priceSpan.textContent = formatPrice(displayPrice);
+          }
+        });
+      }
+
+      // Function to update all prices
+      function updateAllPrices() {
+        const price = calculatePrice();
+        if (totalPrice) totalPrice.textContent = formatPrice(price);
+        if (displayPrice) displayPrice.textContent = formatPrice(price);
+        updateModalSummary();
+      }
 
       sizeInputs.forEach(input => {
         input.addEventListener("change", () => {
-          const price = parseInt(input.dataset.price);
-          if (totalPrice) totalPrice.textContent = formatPrice(price);
-          updateModalSummary();
+          updateAllPrices();
         });
       });
 
