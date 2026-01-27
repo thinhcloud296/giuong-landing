@@ -6,19 +6,24 @@
     <title>Hanabedding - Giường Bọc Da Cao Cấp | Thiết Kế Sang Trọng</title>
     <meta
       name="description"
-      content="Hanabedding - Giường bọc da cao cấp, thiết kế hiện đại, chất liệu bền đẹp. Freeship nội thành, lắp đặt miễn phí. Đặt hàng ngay!"
+      content="Hanabedding - Giường bọc da cao cấp - chống trầy, thiết kế hiện đại, chất liệu bền đẹp. Freeship nội thành, lắp đặt miễn phí. Đặt hàng ngay!"
     />
     <meta
       name="keywords"
       content="giường bọc da, giường ngủ cao cấp, giường hiện đại, hanabedding"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       /* ===== RESET & VARIABLES ===== */
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -39,16 +44,26 @@
         --text-muted: #6b5f54;
         --border: #e8e2db;
         --success: #10b981;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-        --shadow: 0 4px 20px rgba(0,0,0,0.08);
-        --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
         --shadow-glow: 0 0 40px rgba(201, 166, 107, 0.3);
         --radius: 16px;
         --radius-lg: 24px;
         --radius-xl: 32px;
-        --gradient-gold: linear-gradient(135deg, #c9a66b 0%, #e5d4b3 50%, #c9a66b 100%);
+        --gradient-gold: linear-gradient(
+          135deg,
+          #c9a66b 0%,
+          #e5d4b3 50%,
+          #c9a66b 100%
+        );
         --gradient-dark: linear-gradient(135deg, #1a1614 0%, #3d3229 100%);
-        --gradient-shine: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        --gradient-shine: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
       }
 
       html {
@@ -56,7 +71,11 @@
       }
 
       body {
-        font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family:
+          "Be Vietnam Pro",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
         background: var(--white);
         color: var(--text);
         line-height: 1.7;
@@ -76,28 +95,51 @@
       }
 
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
       }
 
       @keyframes shimmer {
-        0% { background-position: -200% 0; }
-        100% { background-position: 200% 0; }
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
 
       @keyframes glow {
-        0%, 100% { box-shadow: 0 0 20px rgba(201, 166, 107, 0.3); }
-        50% { box-shadow: 0 0 40px rgba(201, 166, 107, 0.6); }
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(201, 166, 107, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(201, 166, 107, 0.6);
+        }
       }
 
       .animate-on-scroll {
@@ -148,13 +190,18 @@
       }
 
       .btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
         transition: left 0.5s ease;
       }
 
@@ -208,7 +255,7 @@
       }
 
       .section-header::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -20px;
         left: 50%;
@@ -335,7 +382,8 @@
         position: relative;
         width: 100%;
         min-height: 90vh;
-        background: url('assets/images/giuongbocda/landscape3.png') center center / cover no-repeat;
+        background: url("assets/images/giuongbocda/landscape3.png") center
+          center / cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -343,26 +391,32 @@
       }
 
       .hero-banner::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(180deg, 
-          rgba(10, 9, 8, 0.4) 0%, 
+        background: linear-gradient(
+          180deg,
+          rgba(10, 9, 8, 0.4) 0%,
           rgba(26, 22, 20, 0.7) 50%,
-          rgba(10, 9, 8, 0.9) 100%);
+          rgba(10, 9, 8, 0.9) 100%
+        );
       }
 
       .hero-banner::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 9, 8, 0.5) 100%);
+        background: radial-gradient(
+          ellipse at center,
+          transparent 0%,
+          rgba(10, 9, 8, 0.5) 100%
+        );
       }
 
       .hero-particles {
@@ -385,13 +439,41 @@
         animation: float 6s ease-in-out infinite;
       }
 
-      .hero-particles span:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-      .hero-particles span:nth-child(2) { left: 20%; top: 60%; animation-delay: 1s; }
-      .hero-particles span:nth-child(3) { left: 35%; top: 30%; animation-delay: 2s; }
-      .hero-particles span:nth-child(4) { left: 50%; top: 70%; animation-delay: 3s; }
-      .hero-particles span:nth-child(5) { left: 65%; top: 40%; animation-delay: 4s; }
-      .hero-particles span:nth-child(6) { left: 80%; top: 20%; animation-delay: 5s; }
-      .hero-particles span:nth-child(7) { left: 90%; top: 50%; animation-delay: 2.5s; }
+      .hero-particles span:nth-child(1) {
+        left: 10%;
+        top: 20%;
+        animation-delay: 0s;
+      }
+      .hero-particles span:nth-child(2) {
+        left: 20%;
+        top: 60%;
+        animation-delay: 1s;
+      }
+      .hero-particles span:nth-child(3) {
+        left: 35%;
+        top: 30%;
+        animation-delay: 2s;
+      }
+      .hero-particles span:nth-child(4) {
+        left: 50%;
+        top: 70%;
+        animation-delay: 3s;
+      }
+      .hero-particles span:nth-child(5) {
+        left: 65%;
+        top: 40%;
+        animation-delay: 4s;
+      }
+      .hero-particles span:nth-child(6) {
+        left: 80%;
+        top: 20%;
+        animation-delay: 5s;
+      }
+      .hero-particles span:nth-child(7) {
+        left: 90%;
+        top: 50%;
+        animation-delay: 2.5s;
+      }
 
       .hero-content {
         position: relative;
@@ -426,14 +508,14 @@
         max-width: 320px;
         height: auto;
         margin: 0 auto 35px;
-        filter: drop-shadow(0 8px 30px rgba(0,0,0,0.4));
+        filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.4));
         animation: fadeIn 1s ease-out 0.5s both;
       }
 
       .hero-tagline {
         font-size: 1.3rem;
-        color: rgba(255,255,255,0.9);
-        text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
         max-width: 600px;
         margin: 0 auto 40px;
         line-height: 1.7;
@@ -460,7 +542,7 @@
         flex-direction: column;
         align-items: center;
         gap: 8px;
-        color: rgba(255,255,255,0.5);
+        color: rgba(255, 255, 255, 0.5);
         font-size: 12px;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -507,18 +589,27 @@
       /* ===== PRODUCT SELECTOR ===== */
       .product-section {
         padding: 120px 0;
-        background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+        background: linear-gradient(
+          180deg,
+          var(--bg-light) 0%,
+          var(--white) 100%
+        );
         position: relative;
       }
 
       .product-section::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-light),
+          transparent
+        );
       }
 
       /* Product Display - 2 Column Layout */
@@ -556,7 +647,7 @@
       }
 
       .main-product-image::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -564,9 +655,17 @@
         bottom: 0;
         border-radius: var(--radius-xl);
         padding: 2px;
-        background: linear-gradient(145deg, rgba(201,166,107,0.3), transparent);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        background: linear-gradient(
+          145deg,
+          rgba(201, 166, 107, 0.3),
+          transparent
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
@@ -609,7 +708,9 @@
 
       .thumbnail.active {
         border-color: var(--gold);
-        box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.2), 0 8px 25px rgba(201, 166, 107, 0.25);
+        box-shadow:
+          0 0 0 3px rgba(201, 166, 107, 0.2),
+          0 8px 25px rgba(201, 166, 107, 0.25);
       }
 
       .thumbnail img {
@@ -643,7 +744,7 @@
       }
 
       .product-name::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -12px;
         left: 0;
@@ -686,11 +787,11 @@
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       .color-dot-option::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: -6px;
         border-radius: 50%;
@@ -700,7 +801,7 @@
 
       .color-dot-option:hover {
         transform: scale(1.1) translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
 
       .color-dot-option:hover::before {
@@ -709,12 +810,14 @@
 
       .color-dot-option.active {
         border: 3px solid var(--gold);
-        box-shadow: 0 0 0 4px rgba(201, 166, 107, 0.2), 0 8px 25px rgba(0,0,0,0.15);
+        box-shadow:
+          0 0 0 4px rgba(201, 166, 107, 0.2),
+          0 8px 25px rgba(0, 0, 0, 0.15);
         transform: scale(1.05);
       }
 
       .color-dot-option.active::after {
-        content: '✓';
+        content: "✓";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -722,12 +825,18 @@
         color: white;
         font-size: 18px;
         font-weight: bold;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
 
-      .color-gray { background: linear-gradient(145deg, #a8a8a8, #8a8a8a); }
-      .color-dark-gray { background: linear-gradient(145deg, #5a5a5a, #3d3d3d); }
-      .color-cream { background: linear-gradient(145deg, #fff8ef, #f5f0e6); }
+      .color-gray {
+        background: linear-gradient(145deg, #a8a8a8, #8a8a8a);
+      }
+      .color-dark-gray {
+        background: linear-gradient(145deg, #5a5a5a, #3d3d3d);
+      }
+      .color-cream {
+        background: linear-gradient(145deg, #fffefa, #f8f6f0);
+      }
 
       .color-cream.active::after {
         color: var(--brown);
@@ -740,9 +849,40 @@
         line-height: 1.8;
         margin-bottom: 35px;
         padding: 20px;
-        background: linear-gradient(145deg, rgba(250,249,247,0.8), rgba(255,255,255,0.5));
+        background: linear-gradient(
+          145deg,
+          rgba(250, 249, 247, 0.8),
+          rgba(255, 255, 255, 0.5)
+        );
         border-radius: var(--radius);
         border-left: 3px solid var(--gold);
+      }
+
+      .policy-links {
+        display: flex;
+        gap: 20px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .policy-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background: var(--gradient-gold);
+        color: var(--brown);
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(201, 166, 107, 0.3);
+      }
+
+      .policy-links a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(201, 166, 107, 0.4);
       }
 
       .price-section {
@@ -808,7 +948,7 @@
       }
 
       .model-btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -822,7 +962,7 @@
         border-color: var(--gold);
         color: var(--gold);
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
       }
 
       .model-btn:hover::before {
@@ -873,7 +1013,11 @@
 
       .size-option input:checked + .size-btn {
         border-color: var(--gold);
-        background: linear-gradient(135deg, rgba(201, 166, 107, 0.08), rgba(201, 166, 107, 0.02));
+        background: linear-gradient(
+          135deg,
+          rgba(201, 166, 107, 0.08),
+          rgba(201, 166, 107, 0.02)
+        );
         box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.12);
       }
 
@@ -1004,7 +1148,7 @@
         color: white;
         font-size: 14px;
         font-weight: bold;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
 
       .color-dot.color-gray {
@@ -1016,7 +1160,7 @@
       }
 
       .color-dot.color-cream {
-        background: #f5f0e6;
+        background: #f8f6f0;
         border-color: var(--border);
       }
 
@@ -1141,7 +1285,7 @@
         width: 44px;
         height: 44px;
         border: none;
-        background: rgba(0,0,0,0.05);
+        background: rgba(0, 0, 0, 0.05);
         border-radius: 50%;
         font-size: 24px;
         color: var(--text-muted);
@@ -1162,7 +1306,11 @@
       .modal-header {
         text-align: center;
         padding: 50px 40px 30px;
-        background: linear-gradient(180deg, rgba(250,249,247,0.8) 0%, transparent 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(250, 249, 247, 0.8) 0%,
+          transparent 100%
+        );
         border-bottom: 1px solid rgba(201, 166, 107, 0.1);
       }
 
@@ -1179,7 +1327,7 @@
         font-size: 30px;
         font-weight: 700;
         color: var(--brown);
-        font-family: 'Be Vietnam Pro', serif;
+        font-family: "Be Vietnam Pro", serif;
         letter-spacing: -0.5px;
       }
 
@@ -1218,9 +1366,18 @@
       }
 
       @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        20%, 60% { transform: translateX(-5px); }
-        40%, 80% { transform: translateX(5px); }
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        20%,
+        60% {
+          transform: translateX(-5px);
+        }
+        40%,
+        80% {
+          transform: translateX(5px);
+        }
       }
 
       /* Order Summary */
@@ -1308,13 +1465,18 @@
       }
 
       .modal-submit-btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(201, 166, 107, 0.2), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 166, 107, 0.2),
+          transparent
+        );
         transition: left 0.5s ease;
       }
 
@@ -1332,7 +1494,7 @@
         display: none;
         width: 20px;
         height: 20px;
-        border: 2px solid rgba(255,255,255,0.3);
+        border: 2px solid rgba(255, 255, 255, 0.3);
         border-top-color: white;
         border-radius: 50%;
         animation: spin 0.8s linear infinite;
@@ -1458,7 +1620,11 @@
 
       .size-option input:checked + .size-btn {
         border-color: var(--gold);
-        background: linear-gradient(135deg, rgba(184, 149, 108, 0.08), rgba(184, 149, 108, 0.02));
+        background: linear-gradient(
+          135deg,
+          rgba(184, 149, 108, 0.08),
+          rgba(184, 149, 108, 0.02)
+        );
         box-shadow: 0 0 0 3px rgba(184, 149, 108, 0.12);
       }
 
@@ -1582,7 +1748,7 @@
         display: none;
         width: 20px;
         height: 20px;
-        border: 3px solid rgba(255,255,255,0.3);
+        border: 3px solid rgba(255, 255, 255, 0.3);
         border-top-color: white;
         border-radius: 50%;
         animation: spin 0.8s linear infinite;
@@ -1597,7 +1763,9 @@
       }
 
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       .form-benefits {
@@ -1702,13 +1870,17 @@
       }
 
       .benefits::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -50%;
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(201, 166, 107, 0.03) 0%, transparent 50%);
+        background: radial-gradient(
+          circle,
+          rgba(201, 166, 107, 0.03) 0%,
+          transparent 50%
+        );
         animation: float 15s ease-in-out infinite;
       }
 
@@ -1717,7 +1889,7 @@
       }
 
       .benefits .section-header p {
-        color: rgba(255,255,255,0.7);
+        color: rgba(255, 255, 255, 0.7);
       }
 
       .benefits .section-header::after {
@@ -1726,10 +1898,11 @@
 
       .benefits-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 28px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
         position: relative;
         z-index: 2;
+        justify-content: space-between;
       }
 
       .benefit-card {
@@ -1745,7 +1918,7 @@
       }
 
       .benefit-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -1765,6 +1938,21 @@
 
       .benefit-card:hover::before {
         transform: scaleX(1);
+      }
+
+      .benefit-card a {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--gold);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .benefit-card a:hover {
+        color: var(--gold-light);
+        transform: translateX(5px);
       }
 
       .benefit-icon {
@@ -1796,7 +1984,7 @@
 
       .benefit-card p {
         font-size: 15px;
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
         line-height: 1.6;
       }
 
@@ -1819,7 +2007,11 @@
       /* ===== FEEDBACK ===== */
       .feedback {
         padding: 120px 0;
-        background: linear-gradient(180deg, var(--white) 0%, var(--bg-light) 100%);
+        background: linear-gradient(
+          180deg,
+          var(--white) 0%,
+          var(--bg-light) 100%
+        );
         position: relative;
       }
 
@@ -1834,7 +2026,7 @@
         padding: 40px 32px;
         border-radius: var(--radius-xl);
         border: 1px solid rgba(201, 166, 107, 0.1);
-        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
         overflow: hidden;
@@ -1853,7 +2045,7 @@
 
       .feedback-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
         border-color: rgba(201, 166, 107, 0.3);
       }
 
@@ -1924,13 +2116,18 @@
       }
 
       .faq::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(201, 166, 107, 0.3), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 166, 107, 0.3),
+          transparent
+        );
       }
 
       .faq-list {
@@ -1944,12 +2141,12 @@
         margin-bottom: 16px;
         overflow: hidden;
         border: 1px solid transparent;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .faq-item:hover {
-        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         transform: translateY(-2px);
       }
 
@@ -2028,7 +2225,7 @@
       }
 
       .footer::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -2038,13 +2235,17 @@
       }
 
       .footer::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: -20%;
         width: 60%;
         height: 60%;
-        background: radial-gradient(circle, rgba(201, 166, 107, 0.03) 0%, transparent 60%);
+        background: radial-gradient(
+          circle,
+          rgba(201, 166, 107, 0.03) 0%,
+          transparent 60%
+        );
         pointer-events: none;
       }
 
@@ -2071,7 +2272,7 @@
       }
 
       .footer-brand p {
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
         line-height: 1.8;
         font-size: 15px;
         max-width: 350px;
@@ -2091,7 +2292,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
         margin-bottom: 14px;
         font-size: 15px;
         transition: all 0.3s ease;
@@ -2105,8 +2306,8 @@
       .footer-bottom {
         text-align: center;
         padding-top: 32px;
-        border-top: 1px solid rgba(255,255,255,0.08);
-        color: rgba(255,255,255,0.4);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.4);
         font-size: 14px;
       }
 
@@ -2141,7 +2342,7 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         padding: 16px 20px;
-        box-shadow: 0 -8px 30px rgba(0,0,0,0.12);
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
         z-index: 999;
         border-top: 1px solid rgba(201, 166, 107, 0.1);
       }
@@ -2169,7 +2370,7 @@
         background: var(--brown);
         color: white;
         border-radius: var(--radius);
-        box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
         transform: translateX(150%);
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 2000;
@@ -2820,7 +3021,7 @@
     <header class="header">
       <div class="container">
         <a href="#" class="logo">
-          <img src="assets/images/giuongbocda/logo.PNG" alt="Hana Bedding">
+          <img src="assets/images/giuongbocda/logo.PNG" alt="Hana Bedding" />
         </a>
         <div class="header-right">
           <a href="tel:0764265775" class="hotline">
@@ -2844,8 +3045,15 @@
         <span></span>
       </div>
       <div class="hero-content">
-        <img src="assets/images/giuongbocda/logo.PNG" alt="Hana Bedding" class="hero-logo">
-        <p class="hero-tagline">Chạm vào sự thư thái mỗi ngày với thiết kế giường tinh tế và sang trọng</p>
+        <img
+          src="assets/images/giuongbocda/logo.PNG"
+          alt="Hana Bedding"
+          class="hero-logo"
+        />
+        <p class="hero-tagline">
+          Chạm vào sự thư thái mỗi ngày với thiết kế giường tinh tế và sang
+          trọng
+        </p>
         <div class="hero-cta">
           <a href="#order" class="btn btn-primary">🛒 Khám Phá Ngay</a>
         </div>
@@ -2865,17 +3073,24 @@
           <!-- LEFT: Images -->
           <div class="product-images">
             <div class="main-product-image">
-              <img id="mainProductImage" src="assets/images/giuongbocda/2.1.jpg" alt="Giường Bọc Da">
+              <img
+                id="mainProductImage"
+                src="assets/images/giuongbocda/2.1.jpg"
+                alt="Giường Bọc Da"
+              />
             </div>
             <div class="thumbnail-images" id="thumbnailImages">
               <div class="thumbnail active" data-color="gray">
-                <img src="assets/images/giuongbocda/2.1.jpg" alt="Màu Xám">
+                <img src="assets/images/giuongbocda/2.1.jpg" alt="Màu Xám" />
               </div>
               <div class="thumbnail" data-color="dark-gray">
-                <img src="assets/images/giuongbocda/2.2.jpg" alt="Màu Xám Đậm">
+                <img
+                  src="assets/images/giuongbocda/2.2.jpg"
+                  alt="Màu Xám Đậm"
+                />
               </div>
               <div class="thumbnail" data-color="cream">
-                <img src="assets/images/giuongbocda/2.3.jpg" alt="Màu Kem">
+                <img src="assets/images/giuongbocda/2.3.jpg" alt="Màu Kem" />
               </div>
             </div>
           </div>
@@ -2886,17 +3101,39 @@
 
             <!-- Color Selector -->
             <div class="color-section">
-              <div class="section-label">Màu sắc: <span id="currentColorName">Xám</span></div>
+              <div class="section-label">
+                Màu sắc: <span id="currentColorName">Xám</span>
+              </div>
               <div class="color-options">
-                <div class="color-dot-option color-gray active" data-color="gray" title="Xám"></div>
-                <div class="color-dot-option color-dark-gray" data-color="dark-gray" title="Xám Đậm"></div>
-                <div class="color-dot-option color-cream" data-color="cream" title="Trắng Kem"></div>
+                <div
+                  class="color-dot-option color-gray active"
+                  data-color="gray"
+                  title="Xám"
+                ></div>
+                <div
+                  class="color-dot-option color-dark-gray"
+                  data-color="dark-gray"
+                  title="Xám Đậm"
+                ></div>
+                <div
+                  class="color-dot-option color-cream"
+                  data-color="cream"
+                  title="Trắng Kem"
+                ></div>
               </div>
             </div>
 
             <!-- Description -->
             <div class="product-description">
-              Chất liệu da cao cấp, khung sườn chắc chắn chịu lực, thiết kế thông minh tiết kiệm diện tích. Phù hợp mọi không gian nhà ở sang trọng. <strong>Miễn Phí Ship và Giao Lắp</strong> khách hàng tại Thành phố Hồ Chí Minh và một số khu vực tỉnh lân cận trong phạm vi 50km.
+              Chất liệu da cao cấp chống trầy, khung sườn chắc chắn chịu lực,
+              thiết kế thông minh tiết kiệm diện tích. Phù hợp mọi không gian
+              nhà ở sang trọng. <strong>Miễn Phí Ship và Giao Lắp</strong> khách
+              hàng tại Thành phố Hồ Chí Minh và một số khu vực tỉnh lân cận
+              trong phạm vi 50km.
+              <div class="policy-links">
+                <a href="chinh-sach-giao-lap.html">📦 Chính sách Giao Lắp</a>
+                <a href="chinh-sach-bao-hanh.html">🛡️ Chính sách Bảo Hành</a>
+              </div>
             </div>
 
             <!-- Price -->
@@ -2910,9 +3147,27 @@
             <div class="model-section">
               <div class="section-label">Chọn mẫu:</div>
               <div class="model-buttons">
-                <button class="model-btn" data-model="1" data-model-name="Mẫu 1 - Sọc Dọc">Sọc Dọc</button>
-                <button class="model-btn active" data-model="2" data-model-name="Mẫu 2 - Vuông">Vuông</button>
-                <button class="model-btn" data-model="3" data-model-name="Mẫu 3 - Trơn">Trơn</button>
+                <button
+                  class="model-btn"
+                  data-model="1"
+                  data-model-name="Mẫu 1 - Sọc Dọc"
+                >
+                  Sọc Dọc
+                </button>
+                <button
+                  class="model-btn active"
+                  data-model="2"
+                  data-model-name="Mẫu 2 - Vuông"
+                >
+                  Vuông
+                </button>
+                <button
+                  class="model-btn"
+                  data-model="3"
+                  data-model-name="Mẫu 3 - Trơn"
+                >
+                  Trơn
+                </button>
               </div>
             </div>
 
@@ -2921,49 +3176,85 @@
               <div class="section-label">Chọn kích thước:</div>
               <div class="size-grid">
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="1m x 2m" data-price="3099000">
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="1m x 2m"
+                    data-price="3099000"
+                  />
                   <div class="size-btn">
                     <span class="size">1m x 2m</span>
                     <span class="price">3.099.000đ</span>
                   </div>
                 </label>
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="1m2 x 2m" data-price="3299000">
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="1m2 x 2m"
+                    data-price="3299000"
+                  />
                   <div class="size-btn">
                     <span class="size">1m2 x 2m</span>
                     <span class="price">3.299.000đ</span>
                   </div>
                 </label>
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="1m4 x 2m" data-price="3499000">
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="1m4 x 2m"
+                    data-price="3499000"
+                  />
                   <div class="size-btn">
                     <span class="size">1m4 x 2m</span>
                     <span class="price">3.499.000đ</span>
                   </div>
                 </label>
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="1m6 x 2m" data-price="3699000" checked>
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="1m6 x 2m"
+                    data-price="3699000"
+                    checked
+                  />
                   <div class="size-btn">
                     <span class="size">1m6 x 2m</span>
                     <span class="price">3.699.000đ</span>
                   </div>
                 </label>
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="1m8 x 2m" data-price="3999000">
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="1m8 x 2m"
+                    data-price="3999000"
+                  />
                   <div class="size-btn">
                     <span class="size">1m8 x 2m</span>
                     <span class="price">3.999.000đ</span>
                   </div>
                 </label>
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="2m x 2m" data-price="4499000">
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="2m x 2m"
+                    data-price="4499000"
+                  />
                   <div class="size-btn">
                     <span class="size">2m x 2m</span>
                     <span class="price">4.499.000đ</span>
                   </div>
                 </label>
                 <label class="size-option">
-                  <input type="radio" name="bedSize" value="2m2 x 2m" data-price="4999000">
+                  <input
+                    type="radio"
+                    name="bedSize"
+                    value="2m2 x 2m"
+                    data-price="4999000"
+                  />
                   <div class="size-btn">
                     <span class="size">2m2 x 2m</span>
                     <span class="price">4.999.000đ</span>
@@ -2974,7 +3265,9 @@
 
             <!-- CTA Button -->
             <div class="cta-section">
-              <a href="#orderPanel" class="btn btn-primary btn-cta">🛒 Đặt Hàng Ngay</a>
+              <a href="#orderPanel" class="btn btn-primary btn-cta"
+                >🛒 Đặt Hàng Ngay</a
+              >
             </div>
           </div>
         </div>
@@ -2984,7 +3277,11 @@
           <div class="order-panel-header">
             <h3>Hoàn Tất Đơn Hàng</h3>
             <div class="selected-product-display" id="selectedDisplay">
-              <img src="assets/images/giuongbocda/2.1.jpg" alt="Selected" id="selectedThumb">
+              <img
+                src="assets/images/giuongbocda/2.1.jpg"
+                alt="Selected"
+                id="selectedThumb"
+              />
               <div class="info">
                 <div class="name" id="selectedName">Mẫu 2 - Vuông</div>
                 <div class="color" id="selectedColor">Màu Xám</div>
@@ -2997,49 +3294,85 @@
             <div class="size-label">Chọn Kích Thước Giường</div>
             <div class="size-grid">
               <label class="size-option">
-                <input type="radio" name="bedSize" value="1m x 2m" data-price="3099000">
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="1m x 2m"
+                  data-price="3099000"
+                />
                 <div class="size-btn">
                   <span class="size">1m x 2m</span>
                   <span class="price">3.099.000đ</span>
                 </div>
               </label>
               <label class="size-option">
-                <input type="radio" name="bedSize" value="1m2 x 2m" data-price="3299000">
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="1m2 x 2m"
+                  data-price="3299000"
+                />
                 <div class="size-btn">
                   <span class="size">1m2 x 2m</span>
                   <span class="price">3.299.000đ</span>
                 </div>
               </label>
               <label class="size-option">
-                <input type="radio" name="bedSize" value="1m4 x 2m" data-price="3499000">
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="1m4 x 2m"
+                  data-price="3499000"
+                />
                 <div class="size-btn">
                   <span class="size">1m4 x 2m</span>
                   <span class="price">3.499.000đ</span>
                 </div>
               </label>
               <label class="size-option">
-                <input type="radio" name="bedSize" value="1m6 x 2m" data-price="3699000" checked>
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="1m6 x 2m"
+                  data-price="3699000"
+                  checked
+                />
                 <div class="size-btn">
                   <span class="size">1m6 x 2m</span>
                   <span class="price">3.699.000đ</span>
                 </div>
               </label>
               <label class="size-option">
-                <input type="radio" name="bedSize" value="1m8 x 2m" data-price="3999000">
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="1m8 x 2m"
+                  data-price="3999000"
+                />
                 <div class="size-btn">
                   <span class="size">1m8 x 2m</span>
                   <span class="price">3.999.000đ</span>
                 </div>
               </label>
               <label class="size-option">
-                <input type="radio" name="bedSize" value="2m x 2m" data-price="4499000">
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="2m x 2m"
+                  data-price="4499000"
+                />
                 <div class="size-btn">
                   <span class="size">2m x 2m</span>
                   <span class="price">4.499.000đ</span>
                 </div>
               </label>
               <label class="size-option">
-                <input type="radio" name="bedSize" value="2m2 x 2m" data-price="4999000">
+                <input
+                  type="radio"
+                  name="bedSize"
+                  value="2m2 x 2m"
+                  data-price="4999000"
+                />
                 <div class="size-btn">
                   <span class="size">2m2 x 2m</span>
                   <span class="price">4.999.000đ</span>
@@ -3057,31 +3390,63 @@
           <!-- Contact Form -->
           <form class="contact-form" id="orderForm">
             <div class="hp-field">
-              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+              <input
+                type="text"
+                name="website"
+                id="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
             </div>
 
             <div class="form-group">
               <label>Họ và tên <span class="required">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Nguyễn Văn A"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label>Số điện thoại <span class="required">*</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="0764265775" required>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="0764265775"
+                required
+              />
             </div>
 
             <div class="form-group full">
               <label>Địa chỉ nhận hàng <span class="required">*</span></label>
-              <input type="text" id="address" name="address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố" required>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố"
+                required
+              />
             </div>
 
             <div class="form-group full">
               <label>Ghi chú (không bắt buộc)</label>
-              <textarea id="note" name="note" placeholder="Ví dụ: Giao hàng buổi sáng, gọi trước khi giao..."></textarea>
+              <textarea
+                id="note"
+                name="note"
+                placeholder="Ví dụ: Giao hàng buổi sáng, gọi trước khi giao..."
+              ></textarea>
             </div>
 
             <div class="submit-section">
-              <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+              <button
+                type="submit"
+                class="btn btn-primary submit-btn"
+                id="submitBtn"
+              >
                 <span class="btn-text">🛒 Đặt Hàng Ngay</span>
                 <span class="spinner"></span>
               </button>
@@ -3107,10 +3472,20 @@
           <div class="success-message" id="successMessage">
             <div class="success-icon">✓</div>
             <h3>Đặt hàng thành công!</h3>
-            <p>Hanabedding sẽ liên hệ xác nhận trong <strong>30 phút</strong> (giờ hành chính).</p>
+            <p>
+              Hanabedding sẽ liên hệ xác nhận trong
+              <strong>30 phút</strong> (giờ hành chính).
+            </p>
             <div class="success-actions">
-              <a href="https://zalo.me/0764265775" target="_blank" class="btn btn-primary zalo-btn">💬 Nhắn Zalo</a>
-              <button type="button" class="btn btn-outline" id="newOrderBtn">Đặt đơn mới</button>
+              <a
+                href="https://zalo.me/0764265775"
+                target="_blank"
+                class="btn btn-primary zalo-btn"
+                >💬 Nhắn Zalo</a
+              >
+              <button type="button" class="btn btn-outline" id="newOrderBtn">
+                Đặt đơn mới
+              </button>
             </div>
           </div>
         </div>
@@ -3128,62 +3503,20 @@
           <div class="benefit-card">
             <div class="benefit-icon">🚚</div>
             <h4>Giao Hàng Miễn Phí</h4>
-            <p>Freeship nội thành HCM & Hà Nội</p>
+            <p>Freeship nội thành HCM & lân cận trong bán kính 50km</p>
+            <a href="chinh-sach-giao-lap.html">Xem chi tiết →</a>
           </div>
           <div class="benefit-card">
             <div class="benefit-icon">🔧</div>
             <h4>Lắp Đặt Tận Nơi</h4>
             <p>Thợ chuyên nghiệp lắp đặt miễn phí</p>
+            <a href="chinh-sach-giao-lap.html">Xem chi tiết →</a>
           </div>
-          <div class="benefit-card"> 
+          <div class="benefit-card">
             <div class="benefit-icon">🛡️</div>
             <h4>Bảo Hành 24 Tháng</h4>
-            <p>Cam kết bảo hành chính hãng</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feedback -->
-    <section class="feedback">
-      <div class="container">
-        <div class="section-header">
-          <h2>Khách Hàng Nói Gì?</h2>
-          <p>Hơn 5.000 khách hàng đã tin tưởng Hanabedding</p>
-        </div>
-        <div class="feedback-grid">
-          <div class="feedback-card">
-            <div class="feedback-stars">★★★★★</div>
-            <p class="feedback-text">"Giường đẹp quá, chất lượng tuyệt vời! Phòng ngủ nhìn sang trọng hẳn lên. Sẽ giới thiệu cho bạn bè."</p>
-            <div class="feedback-author">
-              <div class="feedback-avatar">TH</div>
-              <div>
-                <div class="feedback-name">Chị Thanh Hà</div>
-                <div class="feedback-location">Quận 7, TP.HCM</div>
-              </div>
-            </div>
-          </div>
-          <div class="feedback-card">
-            <div class="feedback-stars">★★★★★</div>
-            <p class="feedback-text">"Giá hợp lý, giao hàng nhanh, thợ lắp đặt nhiệt tình. Rất hài lòng với dịch vụ của Hanabedding!"</p>
-            <div class="feedback-author">
-              <div class="feedback-avatar">MT</div>
-              <div>
-                <div class="feedback-name">Anh Minh Tuấn</div>
-                <div class="feedback-location">Cầu Giấy, Hà Nội</div>
-              </div>
-            </div>
-          </div>
-          <div class="feedback-card">
-            <div class="feedback-stars">★★★★★</div>
-            <p class="feedback-text">"Mua lần 2 rồi, lần trước mua cho con, lần này mua cho vợ chồng. Chất lượng đúng như mô tả."</p>
-            <div class="feedback-author">
-              <div class="feedback-avatar">HL</div>
-              <div>
-                <div class="feedback-name">Chị Hương Ly</div>
-                <div class="feedback-location">Đà Nẵng</div>
-              </div>
-            </div>
+            <p>Cam kết bảo hành chính hãng khung sườn</p>
+            <a href="chinh-sach-bao-hanh.html">Xem chi tiết →</a>
           </div>
         </div>
       </div>
@@ -3197,34 +3530,51 @@
         </div>
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-question">Giao hàng trong bao lâu?</button>
+            <button class="faq-question">
+              Phí giao hàng và lắp đặt như thế nào?
+            </button>
             <div class="faq-answer">
               <div class="faq-answer-content">
-                Nội thành HCM/HN: 2-3 ngày. Các tỉnh khác: 5-7 ngày. Đội ngũ sẽ liên hệ hẹn lịch lắp đặt sau khi giao hàng.
+                <strong>Miễn phí 100%</strong> giao hàng và lắp đặt cho khách
+                hàng tại TP.HCM và các tỉnh lân cận trong
+                <strong>bán kính 50km</strong>. Các tỉnh xa hơn: thanh toán phí
+                vận chuyển theo đơn vị vận chuyển, Hanabedding hỗ trợ hướng dẫn
+                lắp đặt qua video.
               </div>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Phí ship và lắp đặt là bao nhiêu?</button>
+            <button class="faq-question">Bảo hành sản phẩm như thế nào?</button>
             <div class="faq-answer">
               <div class="faq-answer-content">
-                <strong>Freeship nội thành HCM/HN</strong> cho tất cả đơn hàng. Các tỉnh khác: 100.000đ - 300.000đ tùy khu vực. <strong>Lắp đặt miễn phí</strong> cho tất cả đơn hàng.
+                Bảo hành <strong>24 tháng</strong> cho khung sườn/kết cấu giường
+                và <strong>12 tháng</strong> cho phần bọc da, đường may. Lỗi do
+                nhà sản xuất được bảo hành <strong>miễn phí 100%</strong> bao
+                gồm cả chi phí vận chuyển.
               </div>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Có được đổi trả không?</button>
+            <button class="faq-question">
+              Trường hợp nào không được bảo hành?
+            </button>
             <div class="faq-answer">
               <div class="faq-answer-content">
-                Đổi trả miễn phí trong <strong>30 ngày</strong> nếu sản phẩm lỗi hoặc không đúng mô tả. Sản phẩm còn nguyên vẹn, chưa qua sử dụng.
+                Không bảo hành miễn phí nếu hư hỏng do: va đập mạnh, trầy xước
+                do vật nhọn/thú cưng, dính nước/hóa chất, tự ý tháo lắp sửa
+                chữa, thiên tai. Tuy nhiên, công ty vẫn hỗ trợ sửa chữa và
+                <strong>hỗ trợ 20-50% phí ship</strong>.
               </div>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Bảo hành như thế nào?</button>
+            <button class="faq-question">Quy trình bảo hành thế nào?</button>
             <div class="faq-answer">
               <div class="faq-answer-content">
-                Bảo hành <strong>5 năm</strong> cho khung giường về lỗi kỹ thuật: gãy, nứt, cong vênh do lỗi sản xuất.
+                Liên hệ Hotline/Zalo, cung cấp SĐT + hình ảnh và video lỗi. Kỹ
+                thuật đánh giá trong <strong>24-48 giờ</strong>. Lỗi nhẹ xử lý
+                <strong>1-5 ngày</strong> (nội thành), lỗi cần thay linh kiện
+                <strong>7-15 ngày</strong>.
               </div>
             </div>
           </div>
@@ -3232,7 +3582,9 @@
             <button class="faq-question">Thanh toán như thế nào?</button>
             <div class="faq-answer">
               <div class="faq-answer-content">
-                Thanh toán <strong>COD</strong> (nhận hàng rồi trả tiền) hoặc chuyển khoản trước. Hỗ trợ trả góp 0% qua thẻ tín dụng.
+                Thanh toán <strong>COD</strong> (nhận hàng rồi trả tiền) hoặc
+                chuyển khoản trước. Kiểm tra kỹ sản phẩm khi nhận hàng: đúng mẫu
+                mã, kích thước, màu sắc, không trầy xước.
               </div>
             </div>
           </div>
@@ -3246,18 +3598,25 @@
         <div class="footer-content">
           <div class="footer-brand">
             <h4>Hana<span>bedding</span></h4>
-            <p>Mang giấc ngủ đẳng cấp về ngôi nhà của bạn với giường bọc da cao cấp, thiết kế sang trọng, giá cả hợp lý.</p>
+            <p>
+              Mang giấc ngủ đẳng cấp về ngôi nhà của bạn với giường bọc da cao
+              cấp, thiết kế sang trọng, giá cả hợp lý.
+            </p>
           </div>
           <div class="footer-section">
             <h5>Liên hệ</h5>
             <a href="tel:0764265775">📞 Hotline: 076.426.5775</a>
-            <a href="https://zalo.me/0764265775" target="_blank">💬 Zalo: 076.426.5775</a>
+            <a href="https://zalo.me/0764265775" target="_blank"
+              >💬 Zalo: 076.426.5775</a
+            >
             <p>🕐 8:00 - 21:00 hàng ngày</p>
           </div>
           <div class="footer-section">
             <h5>Chính sách</h5>
-            <a href="/chinh-sach-giao-lap.html">Chính sách vận chuyển và lắp đặt</a>
-            <a href="/chinh-sach-bao-hanh.html">Chính sách bảo hành</a>
+            <a href="chinh-sach-giao-lap.html"
+              >Chính sách giao hàng & lắp đặt</a
+            >
+            <a href="chinh-sach-bao-hanh.html">Chính sách bảo hành</a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -3270,7 +3629,7 @@
     <div class="order-modal-overlay" id="orderModal">
       <div class="order-modal">
         <button class="modal-close" id="modalClose">×</button>
-        
+
         <div class="modal-header">
           <div class="modal-brand">HANA BEDDING</div>
           <h2 class="modal-title">Thông Tin Đặt Hàng</h2>
@@ -3279,19 +3638,43 @@
         <div class="modal-body">
           <form id="orderForm">
             <div class="hp-field">
-              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+              <input
+                type="text"
+                name="website"
+                id="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
             </div>
 
             <div class="modal-form-group">
-              <input type="text" id="name" name="name" placeholder="Họ và tên" required>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Họ và tên"
+                required
+              />
             </div>
 
             <div class="modal-form-group">
-              <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" required>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Số điện thoại"
+                required
+              />
             </div>
 
             <div class="modal-form-group">
-              <input type="text" id="address" name="address" placeholder="Địa chỉ nhận hàng chi tiết" required>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Địa chỉ nhận hàng chi tiết"
+                required
+              />
             </div>
 
             <div class="order-summary">
@@ -3299,13 +3682,17 @@
               <div class="order-item">
                 <div class="order-item-info">
                   <h4 id="summaryProductName">Giường Bọc Da - Mẫu Vuông</h4>
-                  <div class="order-item-details" id="summaryDetails">Màu Xám / 1m6 x 2m</div>
+                  <div class="order-item-details" id="summaryDetails">
+                    Màu Xám / 1m6 x 2m
+                  </div>
                 </div>
                 <div class="order-item-price" id="summaryPrice">3.699.000đ</div>
               </div>
               <div class="order-total">
                 <span class="order-total-label">Tổng cộng:</span>
-                <span class="order-total-price" id="summaryTotal">3.699.000đ</span>
+                <span class="order-total-price" id="summaryTotal"
+                  >3.699.000đ</span
+                >
               </div>
             </div>
 
@@ -3320,7 +3707,9 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-      <a href="#" class="btn btn-primary open-modal-btn">🛒 Đặt hàng ngay - Freeship</a>
+      <a href="#" class="btn btn-primary open-modal-btn"
+        >🛒 Đặt hàng ngay - Freeship</a
+      >
     </div>
 
     <script>
@@ -3354,49 +3743,49 @@
       const selectedName = document.getElementById("selectedName");
       const selectedColor = document.getElementById("selectedColor");
       const orderPanel = document.getElementById("orderPanel");
-      
+
       const products = {
-        "1": {
+        1: {
           name: "Mẫu 1 - Sọc Dọc",
           images: {
             gray: "assets/images/giuongbocda/1.1.jpg",
             "dark-gray": "assets/images/giuongbocda/1.2.jpg",
-            cream: "assets/images/giuongbocda/1.3.jpg"
-          }
+            cream: "assets/images/giuongbocda/1.3.jpg",
+          },
         },
-        "2": {
+        2: {
           name: "Mẫu 2 - Vuông",
           images: {
             gray: "assets/images/giuongbocda/2.1.jpg",
             "dark-gray": "assets/images/giuongbocda/2.2.jpg",
-            cream: "assets/images/giuongbocda/2.3.jpg"
-          }
+            cream: "assets/images/giuongbocda/2.3.jpg",
+          },
         },
-        "3": {
+        3: {
           name: "Mẫu 3 - Trơn",
           images: {
             gray: "assets/images/giuongbocda/3.1.jpg",
             "dark-gray": "assets/images/giuongbocda/3.2.jpg",
-            cream: "assets/images/giuongbocda/3.3.jpg"
-          }
-        }
+            cream: "assets/images/giuongbocda/3.3.jpg",
+          },
+        },
       };
 
-      const colorLabels = { 
-        "gray": "Xám", 
-        "dark-gray": "Xám Đậm", 
-        "cream": "Trắng Kem" 
+      const colorLabels = {
+        gray: "Xám",
+        "dark-gray": "Xám Đậm",
+        cream: "Trắng Kem",
       };
 
       let currentModel = "2";
       let currentColor = "gray";
 
       // Model button click - đổi mẫu
-      modelBtns.forEach(btn => {
-        btn.addEventListener("click", function() {
-          modelBtns.forEach(b => b.classList.remove("active"));
+      modelBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          modelBtns.forEach((b) => b.classList.remove("active"));
           this.classList.add("active");
-          
+
           currentModel = this.dataset.model;
           productName.textContent = this.dataset.modelName;
           updateProductImage();
@@ -3408,11 +3797,11 @@
       });
 
       // Color dot option click - đổi màu
-      colorDotOptions.forEach(option => {
-        option.addEventListener("click", function() {
-          colorDotOptions.forEach(o => o.classList.remove("active"));
+      colorDotOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          colorDotOptions.forEach((o) => o.classList.remove("active"));
           this.classList.add("active");
-          
+
           currentColor = this.dataset.color;
           currentColorName.textContent = colorLabels[currentColor];
           updateProductImage();
@@ -3422,23 +3811,25 @@
       });
 
       // Thumbnail click - đổi màu (không đổi mẫu)
-      thumbnails.forEach(thumb => {
-        thumb.addEventListener("click", function() {
+      thumbnails.forEach((thumb) => {
+        thumb.addEventListener("click", function () {
           const color = this.dataset.color;
-          
+
           // Cập nhật màu
           currentColor = color;
           currentColorName.textContent = colorLabels[currentColor];
-          
+
           // Cập nhật color dots
-          colorDotOptions.forEach(o => o.classList.remove("active"));
-          const colorDot = document.querySelector(`.color-dot-option[data-color="${color}"]`);
+          colorDotOptions.forEach((o) => o.classList.remove("active"));
+          const colorDot = document.querySelector(
+            `.color-dot-option[data-color="${color}"]`,
+          );
           if (colorDot) colorDot.classList.add("active");
-          
+
           // Cập nhật thumbnail active
-          thumbnails.forEach(t => t.classList.remove("active"));
+          thumbnails.forEach((t) => t.classList.remove("active"));
           this.classList.add("active");
-          
+
           // Cập nhật ảnh
           updateProductImage();
           updateOrderPanel();
@@ -3452,26 +3843,36 @@
 
       function updateOrderPanel() {
         // Update old panel (hidden)
-        if (selectedThumb) selectedThumb.src = products[currentModel].images[currentColor];
-        if (selectedName) selectedName.textContent = products[currentModel].name;
-        if (selectedColor) selectedColor.textContent = "Màu " + colorLabels[currentColor];
-        
+        if (selectedThumb)
+          selectedThumb.src = products[currentModel].images[currentColor];
+        if (selectedName)
+          selectedName.textContent = products[currentModel].name;
+        if (selectedColor)
+          selectedColor.textContent = "Màu " + colorLabels[currentColor];
+
         // Update modal summary
         updateModalSummary();
       }
 
       function updateModalSummary() {
-        const summaryProductName = document.getElementById("summaryProductName");
+        const summaryProductName =
+          document.getElementById("summaryProductName");
         const summaryDetails = document.getElementById("summaryDetails");
         const summaryPrice = document.getElementById("summaryPrice");
         const summaryTotal = document.getElementById("summaryTotal");
-        
-        const selectedSize = document.querySelector('input[name="bedSize"]:checked');
+
+        const selectedSize = document.querySelector(
+          'input[name="bedSize"]:checked',
+        );
         const sizeText = selectedSize ? selectedSize.value : "1m6 x 2m";
         const priceValue = calculatePrice(); // Use calculated price with model surcharge
-        
-        if (summaryProductName) summaryProductName.textContent = "Giường Bọc Da - " + products[currentModel].name;
-        if (summaryDetails) summaryDetails.textContent = "Màu " + colorLabels[currentColor] + " / " + sizeText;
+
+        if (summaryProductName)
+          summaryProductName.textContent =
+            "Giường Bọc Da - " + products[currentModel].name;
+        if (summaryDetails)
+          summaryDetails.textContent =
+            "Màu " + colorLabels[currentColor] + " / " + sizeText;
         if (summaryPrice) summaryPrice.textContent = formatPrice(priceValue);
         if (summaryTotal) summaryTotal.textContent = formatPrice(priceValue);
       }
@@ -3479,7 +3880,7 @@
       // Cập nhật thumbnails - hiển thị 3 màu của mẫu hiện tại
       function updateThumbnailImages() {
         const colors = Object.keys(colorLabels);
-        
+
         thumbnails.forEach((thumb, index) => {
           if (index < colors.length) {
             const color = colors[index];
@@ -3487,7 +3888,7 @@
             const img = thumb.querySelector("img");
             img.src = products[currentModel].images[color];
             img.alt = "Màu " + colorLabels[color];
-            
+
             // Cập nhật active state
             if (color === currentColor) {
               thumb.classList.add("active");
@@ -3517,15 +3918,15 @@
 
       // Open modal from CTA button
       if (ctaBtn) {
-        ctaBtn.addEventListener("click", function(e) {
+        ctaBtn.addEventListener("click", function (e) {
           e.preventDefault();
           openModal();
         });
       }
 
       // Open modal from other buttons
-      openModalBtns.forEach(btn => {
-        btn.addEventListener("click", function(e) {
+      openModalBtns.forEach((btn) => {
+        btn.addEventListener("click", function (e) {
           e.preventDefault();
           openModal();
         });
@@ -3538,7 +3939,7 @@
 
       // Close modal when clicking overlay
       if (orderModal) {
-        orderModal.addEventListener("click", function(e) {
+        orderModal.addEventListener("click", function (e) {
           if (e.target === orderModal) {
             closeModal();
           }
@@ -3546,7 +3947,7 @@
       }
 
       // Close modal with Escape key
-      document.addEventListener("keydown", function(e) {
+      document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && orderModal.classList.contains("show")) {
           closeModal();
         }
@@ -3562,13 +3963,15 @@
 
       // Function to calculate price based on size and model
       function calculatePrice() {
-        const selectedSize = document.querySelector('input[name="bedSize"]:checked');
+        const selectedSize = document.querySelector(
+          'input[name="bedSize"]:checked',
+        );
         if (!selectedSize) return 3699000; // default price
-        
+
         const basePrice = parseInt(selectedSize.dataset.price);
-        const activeModel = document.querySelector('.model-btn.active');
+        const activeModel = document.querySelector(".model-btn.active");
         const modelNumber = activeModel ? activeModel.dataset.model : "2";
-        
+
         // Add 500k if model is "3" (Trơn)
         const finalPrice = modelNumber === "3" ? basePrice + 500000 : basePrice;
         return finalPrice;
@@ -3576,15 +3979,15 @@
 
       // Function to update size option prices display
       function updateSizeOptionPrices() {
-        const activeModel = document.querySelector('.model-btn.active');
+        const activeModel = document.querySelector(".model-btn.active");
         const modelNumber = activeModel ? activeModel.dataset.model : "2";
         const surcharge = modelNumber === "3" ? 500000 : 0;
-        
+
         // Update all size option price displays
-        sizeInputs.forEach(input => {
+        sizeInputs.forEach((input) => {
           const basePrice = parseInt(input.dataset.price);
           const displayPrice = basePrice + surcharge;
-          const priceSpan = input.parentElement.querySelector('.price');
+          const priceSpan = input.parentElement.querySelector(".price");
           if (priceSpan) {
             priceSpan.textContent = formatPrice(displayPrice);
           }
@@ -3599,18 +4002,20 @@
         updateModalSummary();
       }
 
-      sizeInputs.forEach(input => {
+      sizeInputs.forEach((input) => {
         input.addEventListener("change", () => {
           updateAllPrices();
         });
       });
 
       // ===== FAQ ACCORDION =====
-      document.querySelectorAll(".faq-question").forEach(question => {
+      document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
           const item = question.parentElement;
           const isActive = item.classList.contains("active");
-          document.querySelectorAll(".faq-item").forEach(faq => faq.classList.remove("active"));
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((faq) => faq.classList.remove("active"));
           if (!isActive) item.classList.add("active");
         });
       });
@@ -3626,7 +4031,10 @@
       if (phoneInput) {
         phoneInput.addEventListener("input", () => {
           if (phoneInput.value.length > 0) {
-            phoneInput.classList.toggle("error", !validatePhone(phoneInput.value));
+            phoneInput.classList.toggle(
+              "error",
+              !validatePhone(phoneInput.value),
+            );
           } else {
             phoneInput.classList.remove("error");
           }
@@ -3658,7 +4066,7 @@
 
           // Check required fields
           let hasError = false;
-          form.querySelectorAll("input[required]").forEach(field => {
+          form.querySelectorAll("input[required]").forEach((field) => {
             if (!field.value.trim()) {
               field.classList.add("error");
               hasError = true;
@@ -3673,11 +4081,17 @@
           }
 
           // Get selected product & size
-          const selectedSize = document.querySelector('input[name="bedSize"]:checked');
+          const selectedSize = document.querySelector(
+            'input[name="bedSize"]:checked',
+          );
           const activeModelBtn = document.querySelector(".model-btn.active");
-          const activeColorOption = document.querySelector(".color-dot-option.active");
+          const activeColorOption = document.querySelector(
+            ".color-dot-option.active",
+          );
           const sizeText = selectedSize ? selectedSize.value : "1m6 x 2m";
-          const priceValue = selectedSize ? selectedSize.dataset.price : "3699000";
+          const priceValue = selectedSize
+            ? selectedSize.dataset.price
+            : "3699000";
 
           // Collect form data
           const formData = {
@@ -3685,12 +4099,16 @@
             phone: phone,
             address: addressInput ? addressInput.value.trim() : "",
             note: "",
-            product: activeModelBtn ? activeModelBtn.dataset.modelName : "Mẫu 2 - Vuông",
-            color: activeColorOption ? colorLabels[activeColorOption.dataset.color] : "Xám",
+            product: activeModelBtn
+              ? activeModelBtn.dataset.modelName
+              : "Mẫu 2 - Vuông",
+            color: activeColorOption
+              ? colorLabels[activeColorOption.dataset.color]
+              : "Xám",
             size: sizeText,
             price: priceValue,
             pageUrl: window.location.href,
-            userAgent: navigator.userAgent
+            userAgent: navigator.userAgent,
           };
 
           // Show loading
@@ -3702,12 +4120,15 @@
               method: "POST",
               mode: "no-cors",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData)
+              body: JSON.stringify(formData),
             });
 
             // Close modal and show success
             closeModal();
-            showToast("🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.", "success");
+            showToast(
+              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.",
+              "success",
+            );
             form.reset();
 
             console.log("Order submitted:", formData);
@@ -3722,49 +4143,52 @@
       }
 
       // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function(e) {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
           const href = this.getAttribute("href");
           if (href === "#" || this.classList.contains("open-modal-btn")) return;
-          
+
           e.preventDefault();
           const target = document.querySelector(href);
           if (target) {
             const offset = 80;
-            const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            const position =
+              target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: position, behavior: "smooth" });
           }
         });
       });
 
       // Header scroll effect
-      const header = document.querySelector('.header');
-      window.addEventListener('scroll', () => {
+      const header = document.querySelector(".header");
+      window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-          header.classList.add('scrolled');
+          header.classList.add("scrolled");
         } else {
-          header.classList.remove('scrolled');
+          header.classList.remove("scrolled");
         }
       });
 
       // Animate on scroll
       const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: "0px 0px -50px 0px",
       };
 
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll('.benefit-card, .feedback-card, .faq-item').forEach(el => {
-        el.classList.add('animate-on-scroll');
-        observer.observe(el);
-      });
+      document
+        .querySelectorAll(".benefit-card, .feedback-card, .faq-item")
+        .forEach((el) => {
+          el.classList.add("animate-on-scroll");
+          observer.observe(el);
+        });
     </script>
   </body>
 </html>
