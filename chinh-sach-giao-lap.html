@@ -4,388 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chính Sách Giao Hàng & Lắp Đặt - Hanabedding</title>
-    <meta name="description" content="Chính sách giao hàng và lắp đặt giường bọc da Hanabedding - Miễn phí giao lắp trong phạm vi 50km" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      :root {
-        --white: #ffffff;
-        --bg-light: #faf9f7;
-        --bg-card: #fdfcfb;
-        --gold: #c9a66b;
-        --gold-light: #e5d4b3;
-        --gold-hover: #b8956c;
-        --brown: #1a1614;
-        --brown-light: #3d3229;
-        --text: #1a1614;
-        --text-muted: #6b5f54;
-        --border: #e8e2db;
-        --success: #10b981;
-        --shadow: 0 4px 20px rgba(0,0,0,0.08);
-        --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
-        --radius: 16px;
-        --radius-lg: 24px;
-        --gradient-gold: linear-gradient(135deg, #c9a66b 0%, #e5d4b3 50%, #c9a66b 100%);
-        --gradient-dark: linear-gradient(135deg, #1a1614 0%, #3d3229 100%);
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-        background: var(--white);
-        color: var(--text);
-        line-height: 1.7;
-        overflow-x: hidden;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 16px 36px;
-        border: none;
-        border-radius: 100px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        font-family: inherit;
-        position: relative;
-        overflow: hidden;
-        letter-spacing: 0.3px;
-        text-decoration: none;
-      }
-
-      .btn-primary {
-        background: var(--gradient-gold);
-        color: var(--brown);
-        font-weight: 700;
-        box-shadow: 0 4px 20px rgba(201, 166, 107, 0.3);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(201, 166, 107, 0.5);
-      }
-
-      .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(201, 166, 107, 0.1);
-        z-index: 1000;
-        padding: 12px 0;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .header .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        transition: transform 0.3s ease;
-      }
-
-      .logo:hover {
-        transform: scale(1.05);
-      }
-
-      .logo img {
-        height: 75px;
-        width: auto;
-      }
-
-      .header-right {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-
-      .hotline {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 600;
-        color: var(--brown);
-        font-size: 17px;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .hotline:hover {
-        color: var(--gold);
-      }
-
-      .hotline-icon {
-        width: 44px;
-        height: 44px;
-        background: var(--gradient-gold);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--brown);
-        font-size: 18px;
-        box-shadow: 0 4px 15px rgba(201, 166, 107, 0.4);
-      }
-
-      .policy-hero {
-        padding: 140px 0 80px;
-        background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .policy-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-      }
-
-      .policy-hero h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        color: var(--brown);
-        margin-bottom: 20px;
-        letter-spacing: -0.5px;
-      }
-
-      .policy-hero p {
-        font-size: 1.2rem;
-        color: var(--text-muted);
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .policy-content {
-        padding: 80px 0;
-        background: var(--white);
-      }
-
-      .policy-section {
-        background: var(--bg-card);
-        border-radius: var(--radius-lg);
-        padding: 40px;
-        margin-bottom: 30px;
-        box-shadow: var(--shadow);
-        border: 1px solid var(--border);
-        transition: all 0.3s ease;
-      }
-
-      .policy-section:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .policy-section h2 {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--brown);
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid var(--gold-light);
-        position: relative;
-      }
-
-      .policy-section h2::before {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 80px;
-        height: 2px;
-        background: var(--gold);
-      }
-
-      .policy-section h3 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--brown);
-        margin: 25px 0 15px;
-      }
-
-      .policy-section p {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        color: var(--text);
-        margin-bottom: 15px;
-      }
-
-      .policy-section ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 20px 0;
-      }
-
-      .policy-section li {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        color: var(--text);
-        margin-bottom: 12px;
-        padding-left: 30px;
-        position: relative;
-      }
-
-      .policy-section li::before {
-        content: '✓';
-        position: absolute;
-        left: 0;
-        color: var(--gold);
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      .highlight-box {
-        background: linear-gradient(135deg, rgba(201, 166, 107, 0.1), rgba(201, 166, 107, 0.05));
-        border-left: 4px solid var(--gold);
-        padding: 20px 25px;
-        border-radius: var(--radius);
-        margin: 25px 0;
-      }
-
-      .highlight-box p {
-        margin-bottom: 0;
-        font-weight: 500;
-      }
-
-      .free-badge {
-        display: inline-block;
-        background: var(--gradient-gold);
-        color: var(--brown);
-        padding: 10px 25px;
-        border-radius: 100px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        margin: 10px 0;
-      }
-
-      .contact-section {
-        background: var(--gradient-dark);
-        color: var(--white);
-        padding: 60px 40px;
-        border-radius: var(--radius-lg);
-        text-align: center;
-        margin-top: 40px;
-      }
-
-      .contact-section h2 {
-        color: var(--gold);
-        font-size: 2rem;
-        margin-bottom: 30px;
-      }
-
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      .contact-item a {
-        color: var(--gold);
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .contact-item a:hover {
-        color: var(--gold-light);
-      }
-
-      .footer {
-        background: var(--brown);
-        color: rgba(255,255,255,0.8);
-        padding: 40px 0;
-        text-align: center;
-      }
-
-      .footer a {
-        color: var(--gold);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .footer a:hover {
-        color: var(--gold-light);
-      }
-
-      @media (max-width: 768px) {
-        .logo img {
-          height: 60px;
-        }
-
-        .hotline span:last-child {
-          display: none;
-        }
-
-        .policy-hero {
-          padding: 120px 0 60px;
-        }
-
-        .policy-hero h1 {
-          font-size: 2rem;
-        }
-
-        .policy-hero p {
-          font-size: 1rem;
-        }
-
-        .policy-section {
-          padding: 25px;
-        }
-
-        .policy-section h2 {
-          font-size: 1.5rem;
-        }
-
-        .contact-section {
-          padding: 40px 25px;
-        }
-      }
-    </style>
+    <meta
+      name="description"
+      content="Chính sách giao hàng và lắp đặt giường bọc da Hanabedding - Miễn phí giao lắp trong phạm vi 50km"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/policy.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <a href="index.html" class="logo">
-          <img src="assets/images/giuongbocda/logo.PNG" alt="Hanabedding Logo" />
+          <img
+            src="assets/images/giuongbocda/logo.PNG"
+            alt="Hanabedding Logo"
+          />
         </a>
         <div class="header-right">
           <a href="tel:19009147" class="hotline">
@@ -400,27 +38,44 @@
     <section class="policy-hero">
       <div class="container">
         <h1>Chính Sách Giao Hàng & Lắp Đặt</h1>
-        <p>Miễn phí giao hàng và lắp đặt tận nơi, chuyên nghiệp và nhanh chóng.</p>
+        <p>
+          Miễn phí giao hàng và lắp đặt tận nơi, chuyên nghiệp và nhanh chóng.
+        </p>
       </div>
     </section>
 
     <section class="policy-content">
       <div class="container">
-        
         <div class="policy-section">
           <h2>1) Phạm Vi Áp Dụng</h2>
-          <p>Chính sách giao hàng và lắp đặt này áp dụng cho <strong>tất cả sản phẩm giường bọc da</strong> do <strong>Hanabedding</strong> sản xuất và phân phối chính thức trên toàn lãnh thổ Việt Nam.</p>
+          <p>
+            Chính sách giao hàng và lắp đặt này áp dụng cho
+            <strong>tất cả sản phẩm giường bọc da</strong> do
+            <strong>Hanabedding</strong> sản xuất và phân phối chính thức trên
+            toàn lãnh thổ Việt Nam.
+          </p>
         </div>
 
         <div class="policy-section">
           <h2>2) Miễn Phí Giao Hàng & Lắp Đặt</h2>
-          
+
           <h3>Khu vực nội thành TP.HCM</h3>
           <div class="highlight-box">
-            <p><strong>Hana Bedding</strong> hỗ trợ <span class="free-badge">MIỄN PHÍ 100% phí giao hàng và lắp đặt</span> trong các trường hợp sau:</p>
-            <ul style="margin-top: 15px;">
+            <p>
+              <strong>Hana Bedding</strong> hỗ trợ
+              <span class="free-badge"
+                >MIỄN PHÍ 100% phí giao hàng và lắp đặt</span
+              >
+              trong các trường hợp sau:
+            </p>
+            <ul style="margin-top: 15px">
               <li>Khách hàng tại <strong>Thành phố Hồ Chí Minh</strong>.</li>
-              <li>Khách hàng tại <strong>các tỉnh/thành lân cận TP.HCM</strong> trong <strong>phạm vi bán kính ≤ 50km</strong> tính từ kho/xưởng của công ty.</li>
+              <li>
+                Khách hàng tại
+                <strong>các tỉnh/thành lân cận TP.HCM</strong> trong
+                <strong>phạm vi bán kính ≤ 50km</strong> tính từ kho/xưởng của
+                công ty.
+              </li>
             </ul>
           </div>
 
@@ -433,29 +88,52 @@
 
           <h3>Không phát sinh chi phí:</h3>
           <ul>
-            <li>Địa điểm lắp đặt thuận tiện (tầng trệt, có thang máy hoặc lối vận chuyển phù hợp).</li>
+            <li>
+              Địa điểm lắp đặt thuận tiện (tầng trệt, có thang máy hoặc lối vận
+              chuyển phù hợp).
+            </li>
             <li>Điều kiện lắp đặt đúng theo tư vấn ban đầu.</li>
           </ul>
         </div>
 
         <div class="policy-section">
           <h2>3) Giao Hàng Cho Khách Hàng Ở Tỉnh</h2>
-          <p>Đối với khách hàng ở các tỉnh thành khác, Hanabedding hỗ trợ giao hàng qua đơn vị vận chuyển uy tín:</p>
+          <p>
+            Đối với khách hàng ở các tỉnh thành khác, Hanabedding hỗ trợ giao
+            hàng qua đơn vị vận chuyển uy tín:
+          </p>
           <ul>
-            <li>Khách hàng <strong>thanh toán phí vận chuyển</strong> theo biểu phí của đơn vị vận chuyển.</li>
-            <li>Hanabedding <strong>đóng gói cẩn thận</strong>, bảo vệ sản phẩm tối đa trong quá trình vận chuyển.</li>
-            <li>Khách hàng tự lắp đặt hoặc thuê thợ địa phương (Hanabedding hỗ trợ hướng dẫn qua video/điện thoại).</li>
+            <li>
+              Khách hàng <strong>thanh toán phí vận chuyển</strong> theo biểu
+              phí của đơn vị vận chuyển.
+            </li>
+            <li>
+              Hanabedding <strong>đóng gói cẩn thận</strong>, bảo vệ sản phẩm
+              tối đa trong quá trình vận chuyển.
+            </li>
+            <li>
+              Khách hàng tự lắp đặt hoặc thuê thợ địa phương (Hanabedding hỗ trợ
+              hướng dẫn qua video/điện thoại).
+            </li>
           </ul>
         </div>
 
         <div class="policy-section">
           <h2>4) Quy Định Về Lắp Đặt</h2>
           <ul>
-            <li>Công ty <strong>ưu tiên lắp đặt tận nơi</strong> cho khách hàng.</li>
-            <li>Trường hợp khu vực quá xa hoặc điều kiện không cho phép:
-              <ul style="margin-top: 10px;">
-                <li>Công ty sẽ <strong>hỗ trợ gửi hàng</strong> qua đơn vị vận chuyển.</li>
-                <li>Hướng dẫn <strong>lắp đặt chi tiết</strong> (video/hình ảnh).</li>
+            <li>
+              Công ty <strong>ưu tiên lắp đặt tận nơi</strong> cho khách hàng.
+            </li>
+            <li>
+              Trường hợp khu vực quá xa hoặc điều kiện không cho phép:
+              <ul style="margin-top: 10px">
+                <li>
+                  Công ty sẽ <strong>hỗ trợ gửi hàng</strong> qua đơn vị vận
+                  chuyển.
+                </li>
+                <li>
+                  Hướng dẫn <strong>lắp đặt chi tiết</strong> (video/hình ảnh).
+                </li>
               </ul>
             </li>
           </ul>
@@ -465,28 +143,41 @@
           <h2>5) Các Chi Phí Có Thể Phát Sinh (Nếu Có)</h2>
           <p>Một số trường hợp có thể phát sinh thêm chi phí (sẽ báo trước):</p>
           <ul>
-            <li>Khu vực <strong>khó tiếp cận</strong>: hẻm nhỏ, lầu cao không thang máy.</li>
+            <li>
+              Khu vực <strong>khó tiếp cận</strong>: hẻm nhỏ, lầu cao không
+              thang máy.
+            </li>
             <li>Lắp đặt ngoài giờ hành chính theo yêu cầu riêng.</li>
             <li>Yêu cầu tháo dỡ, di dời sản phẩm cũ.</li>
             <li>Thay đổi địa chỉ giao hàng sau khi đã xác nhận lịch.</li>
           </ul>
           <div class="highlight-box">
-            <p>Mọi chi phí phát sinh (nếu có) đều được <strong>thông báo rõ ràng và thống nhất trước</strong>.</p>
+            <p>
+              Mọi chi phí phát sinh (nếu có) đều được
+              <strong>thông báo rõ ràng và thống nhất trước</strong>.
+            </p>
           </div>
         </div>
 
         <div class="policy-section">
           <h2>6) Kiểm Tra & Bàn Giao Sản Phẩm</h2>
-          <p>Khách hàng vui lòng <strong>kiểm tra kỹ sản phẩm</strong> ngay khi nhận hàng:</p>
+          <p>
+            Khách hàng vui lòng <strong>kiểm tra kỹ sản phẩm</strong> ngay khi
+            nhận hàng:
+          </p>
           <ul>
             <li>Đúng mẫu mã, kích thước, màu sắc.</li>
             <li>Không trầy xước, móp méo do vận chuyển.</li>
             <li>Quay video đồng kiểm với đơn vị vận chuyển.</li>
           </ul>
 
-          <p style="margin-top: 20px;">Sau khi lắp đặt hoàn tất và bàn giao:</p>
+          <p style="margin-top: 20px">Sau khi lắp đặt hoàn tất và bàn giao:</p>
           <div class="highlight-box">
-            <p>Công ty <strong>không chịu trách nhiệm</strong> đối với các hư hỏng phát sinh do quá trình sử dụng sau đó (trừ trường hợp bảo hành).</p>
+            <p>
+              Công ty <strong>không chịu trách nhiệm</strong> đối với các hư
+              hỏng phát sinh do quá trình sử dụng sau đó (trừ trường hợp bảo
+              hành).
+            </p>
           </div>
         </div>
 
@@ -503,29 +194,34 @@
             </div>
             <div class="contact-item">
               <span>📧 EMAIL:</span>
-              <a href="mailto:mkt.hanabedding@gmail.com">mkt.hanabedding@gmail.com</a>
+              <a href="mailto:mkt.hanabedding@gmail.com"
+                >mkt.hanabedding@gmail.com</a
+              >
             </div>
           </div>
-          <p style="margin-top: 30px; font-size: 1.1rem;">
-            <strong>Hana Bedding</strong> - Giao hàng nhanh chóng, lắp đặt chuyên nghiệp, tận tâm phục vụ!
+          <p style="margin-top: 30px; font-size: 1.1rem">
+            <strong>Hana Bedding</strong> - Giao hàng nhanh chóng, lắp đặt
+            chuyên nghiệp, tận tâm phục vụ!
           </p>
         </div>
-
       </div>
     </section>
 
     <footer class="footer">
       <div class="container">
         <p>&copy; 2026 Hanabedding. Tất cả quyền được bảo lưu.</p>
-        <p style="margin-top: 10px;">
-          <a href="index.html">Trang chủ</a> | 
-          <a href="chinh-sach-bao-hanh.html">Chính sách bảo hành</a> | 
+        <p style="margin-top: 10px">
+          <a href="index.html">Trang chủ</a> |
+          <a href="chinh-sach-bao-hanh.html">Chính sách bảo hành</a> |
           <a href="chinh-sach-giao-lap.html">Chính sách giao lắp</a>
         </p>
-        <p style="margin-top: 15px; font-size: 0.9rem;">
-          📞 Hotline: <a href="tel:19009147">1900 9147</a> | 
-          💬 Zalo: <a href="tel:0764265775">076 426 5775</a><br>
-          📧 <a href="mailto:mkt.hanabedding@gmail.com">mkt.hanabedding@gmail.com</a><br>
+        <p style="margin-top: 15px; font-size: 0.9rem">
+          📞 Hotline: <a href="tel:19009147">1900 9147</a> | 💬 Zalo:
+          <a href="tel:0764265775">076 426 5775</a><br />
+          📧
+          <a href="mailto:mkt.hanabedding@gmail.com"
+            >mkt.hanabedding@gmail.com</a
+          ><br />
           🏢 361 Nguyễn Kim Cương, Củ Chi, TP. Hồ Chí Minh
         </p>
       </div>
