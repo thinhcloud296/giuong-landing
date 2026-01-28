@@ -715,6 +715,10 @@ a {
   touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  /* Cải thiện performance */
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .thumbnail-slider:active {
@@ -796,6 +800,11 @@ a {
   will-change: transform;
   user-select: none;
   -webkit-user-select: none;
+  /* Cải thiện performance trên mobile */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .thumbnail {
@@ -1028,9 +1037,16 @@ a {
       0 8px 25px rgba(201, 166, 107, 0.3);
   }
   
-  /* Cải thiện slider container */
+  /* Cải thiện slider container - ngăn scroll trang khi vuốt slider */
   .thumbnail-slider {
     touch-action: pan-x; /* Chỉ cho phép scroll ngang */
+    overscroll-behavior-x: contain; /* Ngăn overscroll ngang ảnh hưởng đến trang */
+  }
+  
+  /* Cải thiện thumbnail-slider-container */
+  .thumbnail-slider-container {
+    overscroll-behavior: contain; /* Ngăn overscroll ảnh hưởng đến trang */
+    isolation: isolate; /* Tạo stacking context riêng */
   }
 }
 

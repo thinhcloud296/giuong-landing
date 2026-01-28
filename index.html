@@ -1455,13 +1455,17 @@
       // Touch events for swipe
       let hasMoved = false;
       let touchStartTime = 0;
+      let touchStartY = 0;
+      let isHorizontalSwipe = false;
 
       thumbnailSlider.addEventListener(
         "touchstart",
         function (e) {
           touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
           isDragging = true;
           hasMoved = false;
+          isHorizontalSwipe = false;
           touchStartTime = Date.now();
           startTranslateX = currentTranslateX;
           thumbnailImagesContainer.style.transition = "none";
@@ -1474,31 +1478,43 @@
         function (e) {
           if (!isDragging) return;
           const touchX = e.touches[0].clientX;
-          const diff = touchX - touchStartX;
+          const touchY = e.touches[0].clientY;
+          const diffX = touchX - touchStartX;
+          const diffY = touchY - touchStartY;
 
-          // Nếu di chuyển quá 15px thì đánh dấu là đang swipe (tăng từ 10px lên 15px)
-          if (Math.abs(diff) > 15) {
-            hasMoved = true;
+          // Xác định hướng swipe ngay từ đầu
+          if (!isHorizontalSwipe && (Math.abs(diffX) > 5 || Math.abs(diffY) > 5)) {
+            isHorizontalSwipe = Math.abs(diffX) > Math.abs(diffY);
           }
 
-          const newTranslateX = startTranslateX + diff;
+          // Nếu là horizontal swipe, ngăn scroll dọc
+          if (isHorizontalSwipe) {
+            e.preventDefault();
+            
+            // Nếu di chuyển quá 15px thì đánh dấu là đang swipe
+            if (Math.abs(diffX) > 15) {
+              hasMoved = true;
+            }
 
-          // Limit bounds with resistance
-          const { thumbnailWidth, maxPosition } = getSliderMetrics();
-          const minTranslate = -maxPosition * thumbnailWidth;
+            const newTranslateX = startTranslateX + diffX;
 
-          if (newTranslateX > 0) {
-            thumbnailImagesContainer.style.transform = `translateX(${newTranslateX * 0.3}px)`;
-          } else if (newTranslateX < minTranslate) {
-            const overscroll = newTranslateX - minTranslate;
-            thumbnailImagesContainer.style.transform = `translateX(${minTranslate + overscroll * 0.3}px)`;
-          } else {
-            thumbnailImagesContainer.style.transform = `translateX(${newTranslateX}px)`;
+            // Limit bounds with resistance
+            const { thumbnailWidth, maxPosition } = getSliderMetrics();
+            const minTranslate = -maxPosition * thumbnailWidth;
+
+            if (newTranslateX > 0) {
+              thumbnailImagesContainer.style.transform = `translateX(${newTranslateX * 0.3}px)`;
+            } else if (newTranslateX < minTranslate) {
+              const overscroll = newTranslateX - minTranslate;
+              thumbnailImagesContainer.style.transform = `translateX(${minTranslate + overscroll * 0.3}px)`;
+            } else {
+              thumbnailImagesContainer.style.transform = `translateX(${newTranslateX}px)`;
+            }
+
+            touchEndX = touchX;
           }
-
-          touchEndX = touchX;
         },
-        { passive: true },
+        { passive: false }, // Đổi thành false để có thể preventDefault
       );
 
       thumbnailSlider.addEventListener("touchend", function (e) {
@@ -1526,7 +1542,9 @@
         updateSlider(true);
         touchStartX = 0;
         touchEndX = 0;
+        touchStartY = 0;
         touchStartTime = 0;
+        isHorizontalSwipe = false;
         
         // Reset hasMoved sau 100ms để đảm bảo click event được xử lý
         setTimeout(() => {
