@@ -1421,7 +1421,15 @@
 
       function getSliderMetrics() {
         const thumbnailWidth = thumbnails[0].offsetWidth + 12; // width + gap
-        const visibleThumbnails = window.innerWidth <= 968 ? 3 : 5;
+        // Tính số thumbnail hiển thị dựa trên breakpoint
+        let visibleThumbnails;
+        if (window.innerWidth <= 640) {
+          visibleThumbnails = 2.5; // Mobile: hiển thị 2.5 thumbnails
+        } else if (window.innerWidth <= 968) {
+          visibleThumbnails = 3.5; // Tablet: hiển thị 3.5 thumbnails
+        } else {
+          visibleThumbnails = 5; // Desktop: hiển thị 5 thumbnails
+        }
         const maxPosition = Math.max(0, thumbnails.length - visibleThumbnails);
         return { thumbnailWidth, visibleThumbnails, maxPosition };
       }
@@ -1503,12 +1511,18 @@
             const minTranslate = -maxPosition * thumbnailWidth;
 
             if (newTranslateX > 0) {
+              // Overscroll left - apply resistance
               thumbnailImagesContainer.style.transform = `translateX(${newTranslateX * 0.3}px)`;
+              currentTranslateX = newTranslateX; // Lưu giá trị thực
             } else if (newTranslateX < minTranslate) {
+              // Overscroll right - apply resistance
               const overscroll = newTranslateX - minTranslate;
               thumbnailImagesContainer.style.transform = `translateX(${minTranslate + overscroll * 0.3}px)`;
+              currentTranslateX = newTranslateX; // Lưu giá trị thực
             } else {
+              // Normal scroll
               thumbnailImagesContainer.style.transform = `translateX(${newTranslateX}px)`;
+              currentTranslateX = newTranslateX; // Lưu giá trị thực
             }
 
             touchEndX = touchX;
@@ -1523,20 +1537,26 @@
 
         const diff = touchEndX - touchStartX;
         const touchDuration = Date.now() - touchStartTime;
-        const { thumbnailWidth } = getSliderMetrics();
+        const { thumbnailWidth, maxPosition } = getSliderMetrics();
 
         // Nếu touch duration < 200ms và di chuyển < 15px thì coi như là tap, không phải swipe
         if (touchDuration < 200 && Math.abs(diff) < 15) {
           hasMoved = false;
         }
 
-        // Swipe threshold - nếu vuốt quá 50px thì chuyển slide
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) {
-            sliderPosition--; // Swipe right - go to previous
-          } else {
-            sliderPosition++; // Swipe left - go to next
-          }
+        // Tính toán vị trí cuối dựa trên currentTranslateX
+        const minTranslate = -maxPosition * thumbnailWidth;
+        
+        // Nếu vượt quá giới hạn, snap về giới hạn
+        if (currentTranslateX > 0) {
+          currentTranslateX = 0;
+          sliderPosition = 0;
+        } else if (currentTranslateX < minTranslate) {
+          currentTranslateX = minTranslate;
+          sliderPosition = maxPosition;
+        } else {
+          // Snap to nearest position
+          sliderPosition = Math.round(-currentTranslateX / thumbnailWidth);
         }
 
         updateSlider(true);
@@ -1582,11 +1602,14 @@
 
         if (newTranslateX > 0) {
           thumbnailImagesContainer.style.transform = `translateX(${newTranslateX * 0.3}px)`;
+          currentTranslateX = newTranslateX;
         } else if (newTranslateX < minTranslate) {
           const overscroll = newTranslateX - minTranslate;
           thumbnailImagesContainer.style.transform = `translateX(${minTranslate + overscroll * 0.3}px)`;
+          currentTranslateX = newTranslateX;
         } else {
           thumbnailImagesContainer.style.transform = `translateX(${newTranslateX}px)`;
+          currentTranslateX = newTranslateX;
         }
 
         touchEndX = e.clientX;
@@ -1597,14 +1620,19 @@
         isMouseDragging = false;
         thumbnailSlider.style.cursor = "grab";
 
-        const diff = touchEndX - mouseStartX;
-
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) {
-            sliderPosition--;
-          } else {
-            sliderPosition++;
-          }
+        const { thumbnailWidth, maxPosition } = getSliderMetrics();
+        const minTranslate = -maxPosition * thumbnailWidth;
+        
+        // Nếu vượt quá giới hạn, snap về giới hạn
+        if (currentTranslateX > 0) {
+          currentTranslateX = 0;
+          sliderPosition = 0;
+        } else if (currentTranslateX < minTranslate) {
+          currentTranslateX = minTranslate;
+          sliderPosition = maxPosition;
+        } else {
+          // Snap to nearest position
+          sliderPosition = Math.round(-currentTranslateX / thumbnailWidth);
         }
 
         updateSlider(true);
