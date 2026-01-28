@@ -3529,3 +3529,41 @@ body {
     display: none;
   }
 }
+
+
+/* ===== PREVENT ZOOM AND OVERFLOW ON MOBILE ===== */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Đảm bảo images không vượt quá container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ngăn zoom khi double tap */
+a, button, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Override cho slider để vẫn có thể swipe */
+.thumbnail-slider,
+.thumbnail-slider *,
+.thumbnail-images,
+.thumbnail {
+  touch-action: pan-x !important;
+}
+
+/* Đảm bảo container không vượt quá viewport */
+.container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ngăn các section gây overflow */
+section {
+  overflow-x: hidden;
+}
