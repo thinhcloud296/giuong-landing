@@ -45,6 +45,13 @@
 
 html {
   scroll-behavior: smooth;
+  /* Ngăn text size adjustment tự động */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Đảm bảo font-size cơ bản */
+  font-size: 16px;
 }
 
 body {
@@ -57,6 +64,13 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+  /* Ngăn text size adjustment tự động trên mobile */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Ngăn tap highlight trên mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -3400,4 +3414,35 @@ body {
     padding: 14px 20px;
     font-size: 15px;
   }
+}
+
+
+/* ===== FIX AUTO-ZOOM ON MOBILE ===== */
+/* Đảm bảo tất cả input, select, textarea có font-size tối thiểu 16px để tránh auto-zoom trên iOS */
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px !important;
+  }
+  
+  /* Đảm bảo các input trong form không bị zoom */
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .modal-form-group input {
+    font-size: 16px !important;
+  }
+}
+
+/* Ngăn double-tap zoom trên iOS */
+* {
+  touch-action: manipulation;
+}
+
+/* Cho phép scroll ngang cho slider */
+.thumbnail-slider,
+.thumbnail-slider * {
+  touch-action: pan-x !important;
 }
