@@ -1556,6 +1556,7 @@
       thumbnailSlider.addEventListener("mousedown", function (e) {
         mouseStartX = e.clientX;
         isMouseDragging = true;
+        hasMoved = false;
         startTranslateX = currentTranslateX;
         thumbnailImagesContainer.style.transition = "none";
         thumbnailSlider.style.cursor = "grabbing";
@@ -1565,6 +1566,12 @@
       document.addEventListener("mousemove", function (e) {
         if (!isMouseDragging) return;
         const diff = e.clientX - mouseStartX;
+        
+        // Nếu di chuyển quá 10px thì đánh dấu là đang drag
+        if (Math.abs(diff) > 10) {
+          hasMoved = true;
+        }
+        
         const newTranslateX = startTranslateX + diff;
 
         const { thumbnailWidth, maxPosition } = getSliderMetrics();
@@ -1653,6 +1660,11 @@
           updateOrderPanel();
           updateSizeOptionPrices();
           updateAllPrices();
+          
+          // Reset hasMoved sau khi xử lý xong
+          setTimeout(() => {
+            hasMoved = false;
+          }, 100);
         });
       });
 
