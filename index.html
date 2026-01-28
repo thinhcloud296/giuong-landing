@@ -366,6 +366,14 @@
                 </label>
               </div>
             </div>
+
+            <!-- Freeship Description (Desktop only) -->
+            <div class="freeship-description">
+              <div class="freeship-content">
+                <strong>Miễn Phí Ship & Lắp Đặt</strong>
+                <p>Áp dụng cho khách hàng tại TP.HCM và các khu vực lân cận trong phạm vi 50km. Thanh toán khi nhận hàng.</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -380,7 +388,7 @@
                 id="selectedThumb"
               />
               <div class="info">
-                <div class="name" id="selectedName">Mẫu 2 - Vuông</div>
+                <div class="name" id="selectedName">Vuông</div>
                 <div class="color" id="selectedColor">Màu Xám</div>
               </div>
             </div>
@@ -1457,7 +1465,7 @@
 
       const products = {
         1: {
-          name: "Mẫu 1 - Sọc Dọc",
+          name: "Sọc Dọc",
           images: {
             gray: "assets/images/giuongbocda/1.1.jpg",
             "dark-gray": "assets/images/giuongbocda/1.2.jpg",
@@ -1465,7 +1473,7 @@
           },
         },
         2: {
-          name: "Mẫu 2 - Vuông",
+          name: "Vuông",
           images: {
             gray: "assets/images/giuongbocda/2.1.jpg",
             "dark-gray": "assets/images/giuongbocda/2.2.jpg",
@@ -1473,7 +1481,7 @@
           },
         },
         3: {
-          name: "Mẫu 3 - Trần",
+          name: "Trần",
           images: {
             gray: "assets/images/giuongbocda/3.1.jpg",
             "dark-gray": "assets/images/giuongbocda/3.2.jpg",
@@ -2047,12 +2055,8 @@
             phone: phone,
             address: addressInput ? addressInput.value.trim() : "",
             note: "",
-            product: activeModelBtn
-              ? activeModelBtn.dataset.modelName
-              : "Mẫu 2 - Vuông",
-            color: activeColorOption
-              ? colorLabels[activeColorOption.dataset.color]
-              : "Xám",
+            product: products[currentModel].name,
+            color: colorLabels[currentColor],
             size: sizeText,
             price: priceValue,
             pageUrl: window.location.href,

@@ -2865,7 +2865,7 @@ body {
 
   /* Section Headers */
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .section-header h2 {
@@ -2936,7 +2936,7 @@ body {
 
   /* Product Section Mobile */
   .product-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .product-section > .container {
@@ -3067,7 +3067,7 @@ body {
 
   /* Benefits Mobile */
   .benefits {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .benefits-grid {
@@ -3097,7 +3097,7 @@ body {
 
   /* Feedback Mobile */
   .feedback {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .feedback-card {
@@ -3143,7 +3143,7 @@ body {
 
   /* FAQ Mobile */
   .faq {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .faq-item {
@@ -3170,7 +3170,7 @@ body {
 
   /* Footer Mobile */
   .footer {
-    padding: 50px 0 20px;
+    padding: 40px 0 20px;
   }
 
   .footer-content {
@@ -3567,4 +3567,42 @@ a, button, input, select, textarea {
 /* Ngăn các section gây overflow */
 section {
   overflow-x: hidden;
+}
+
+
+/* Freeship Description (Desktop only) */
+.freeship-description {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  background: linear-gradient(145deg, #fffbf5, #fff8ef);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--gold);
+  margin-top: 20px;
+}
+
+.freeship-content {
+  flex: 1;
+}
+
+.freeship-content strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 6px;
+}
+
+.freeship-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Hide freeship description on mobile */
+@media (max-width: 968px) {
+  .freeship-description {
+    display: none;
+  }
 }
