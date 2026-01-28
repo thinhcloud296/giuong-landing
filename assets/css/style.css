@@ -2863,6 +2863,50 @@ body {
   }
 }
 
+/* ===== SIZE TABLE RESPONSIVE ===== */
+@media (max-width: 640px) {
+  /* Đảm bảo table không bị xuống hàng */
+  table {
+    min-width: 100%;
+    white-space: nowrap;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 6px !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+  
+  table th:first-child,
+  table td:first-child {
+    padding-left: 8px !important;
+  }
+  
+  table th:last-child,
+  table td:last-child {
+    padding-right: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  table th,
+  table td {
+    padding: 6px 4px !important;
+    font-size: 11px !important;
+  }
+  
+  table th:first-child,
+  table td:first-child {
+    padding-left: 6px !important;
+  }
+  
+  table th:last-child,
+  table td:last-child {
+    padding-right: 6px !important;
+  }
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 480px) {
   /* Container */
