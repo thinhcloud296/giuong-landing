@@ -890,7 +890,7 @@ a {
 /* Size Section Below Image */
 .size-section-below-image {
   margin-top: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
   padding: 8px;
   background: linear-gradient(145deg, rgba(250, 249, 247, 0.8), rgba(255, 255, 255, 0.5));
   border-radius: 10px;
@@ -1021,7 +1021,7 @@ a {
   /* Giảm khoảng cách cho size section */
   .size-section-below-image {
     margin-top: 6px;
-    margin-bottom: 32px;
+    margin-bottom: 6px;
     padding: 6px;
   }
   
@@ -1100,13 +1100,13 @@ a {
   
   /* Giảm padding của product-details */
   .product-details {
-    padding: 15px 0;
+    padding: 0;
   }
 }
 
 /* RIGHT COLUMN - Details */
 .product-details {
-  padding: 30px 0;
+  padding: 0;
 }
 
 .product-name {
