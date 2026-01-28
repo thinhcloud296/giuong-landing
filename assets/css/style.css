@@ -897,6 +897,13 @@ a {
   border: 1px solid rgba(201, 166, 107, 0.15);
 }
 
+@media (max-width: 640px) {
+  .size-section-below-image {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
 .size-section-below-image .section-label {
   font-size: 0.85rem;
   margin-bottom: 8px;
