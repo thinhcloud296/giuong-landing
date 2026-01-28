@@ -310,6 +310,17 @@
         justify-content: space-between;
       }
 
+      .header-title-mobile {
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--brown);
+        text-align: center;
+        flex: 1;
+        padding: 0 20px;
+        letter-spacing: 0.5px;
+      }
+
       .logo {
         display: flex;
         align-items: center;
@@ -321,7 +332,7 @@
       }
 
       .logo img {
-        height: 75px;
+        height: 90px;
         width: auto;
       }
 
@@ -373,6 +384,11 @@
         }
         .logo img {
           height: 60px;
+        }
+        .header-title-mobile {
+          font-size: 14px;
+          font-weight: 600;
+          padding: 0 10px;
         }
       }
 
@@ -2418,6 +2434,20 @@
         color: var(--brown);
       }
 
+      /* ===== SIZE OVERVIEW RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .size-overview-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 16px !important;
+        }
+        .size-overview-grid > div > div:first-child {
+          font-size: 28px !important;
+        }
+        .size-overview-grid > div > div:last-child {
+          font-size: 13px !important;
+        }
+      }
+
       /* ===== MOBILE RESPONSIVE ===== */
       @media (max-width: 480px) {
         /* Container */
@@ -3023,6 +3053,7 @@
         <a href="#" class="logo">
           <img src="assets/images/giuongbocda/logo.PNG" alt="Hana Bedding" />
         </a>
+        <div class="header-title-mobile">Giường Bọc Da Cao Cấp</div>
         <div class="header-right">
           <a href="tel:0764265775" class="hotline">
             <span class="hotline-icon">📞</span>
@@ -3487,6 +3518,179 @@
                 Đặt đơn mới
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Information -->
+    <section class="product-info-section" style="padding: 80px 0; background: var(--bg-light);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Thông Tin Sản Phẩm</h2>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto; background: var(--white); border-radius: var(--radius-xl); padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);">
+          <div style="display: grid; gap: 32px;">
+            <!-- Quy cách -->
+            <div>
+              <h3 style="font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                <span>📏</span> Quy Cách Sản Phẩm
+              </h3>
+              <div style="color: var(--text); line-height: 1.8; padding-left: 32px;">
+                <p style="margin: 0 0 8px 0;"><strong>Độ dày:</strong> Phần bọc đệm dày 5cm</p>
+                <p style="margin: 0 0 8px 0;"><strong>Kích thước:</strong></p>
+                <ul style="margin: 0; padding-left: 20px;">
+                  <li>Chiều cao thành giường: 30cm | Đầu giường: 100cm</li>
+                  <li>Chiều ngang: 1m / 1m2 / 1m4 / 1m6 / 1m8 / 2m / 2m2</li>
+                  <li>Khung giường: 34mm</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Cấu trúc -->
+            <div>
+              <h3 style="font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                <span>🔨</span> Cấu Trúc
+              </h3>
+              <div style="color: var(--text); line-height: 1.8; padding-left: 32px;">
+                <p style="margin: 0 0 8px 0;"><strong>Bên ngoài:</strong> Da simili cao cấp chống trầy xước</p>
+                <p style="margin: 0;"><strong>Bên trong:</strong> Khung gỗ MDF chắc chắn</p>
+              </div>
+            </div>
+
+            <!-- Đặc tính -->
+            <div>
+              <h3 style="font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                <span>⚙️</span> Đặc Tính Nổi Bật
+              </h3>
+              <div style="color: var(--text); line-height: 1.8; padding-left: 32px;">
+                <p style="margin: 0 0 8px 0;">✨ Thiết kế tinh tế phù hợp nhiều không gian từ hiện đại đến tân cổ điển</p>
+                <p style="margin: 0 0 8px 0;">💪 Độ bền cao nhờ kết hợp gỗ MDF và da Simili chống trầy</p>
+                <p style="margin: 0;">🎯 Tùy biến linh hoạt với 7 kích thước từ giường đơn đến King-size</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section style="padding: 80px 0; background: var(--white);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Hướng Dẫn Kích Thước</h2>
+          <p>Tham khảo chi tiết để chọn kích thước phù hợp</p>
+        </div>
+
+        <div style="max-width: 1000px; margin: 0 auto;">
+          <!-- Tổng quan kích thước -->
+          <div style="background: linear-gradient(145deg, #fffbf5, #fff8ef); border-radius: var(--radius-lg); padding: 30px; margin-bottom: 40px; border: 1px solid rgba(201, 166, 107, 0.2);">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--brown); margin-bottom: 20px; text-align: center;">📐 Tổng Quan Kích Thước</h3>
+            <div class="size-overview-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
+              <div>
+                <div style="font-size: 32px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">30cm</div>
+                <div style="color: var(--text-muted); font-size: 14px;">Chiều cao thành giường</div>
+              </div>
+              <div>
+                <div style="font-size: 32px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">100cm</div>
+                <div style="color: var(--text-muted); font-size: 14px;">Chiều cao đầu giường</div>
+              </div>
+              <div>
+                <div style="font-size: 32px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">+20cm</div>
+                <div style="color: var(--text-muted); font-size: 14px;">Phủ bì chiều ngang</div>
+              </div>
+              <div>
+                <div style="font-size: 32px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">+15cm</div>
+                <div style="color: var(--text-muted); font-size: 14px;">Phủ bì chiều dài</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bảng kích thước chi tiết -->
+          <div style="background: var(--white); border-radius: var(--radius-xl); padding: 30px; margin-bottom: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); border: 1px solid rgba(201, 166, 107, 0.1);">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--brown); margin-bottom: 20px; text-align: center;">📊 Bảng Kích Thước 7 Size</h3>
+            <div style="overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                  <tr style="background: var(--bg-light);">
+                    <th style="padding: 12px; text-align: left; color: var(--brown); font-weight: 600; border-bottom: 2px solid var(--gold);">Kích thước</th>
+                    <th style="padding: 12px; text-align: center; color: var(--brown); font-weight: 600; border-bottom: 2px solid var(--gold);">Lọt lòng</th>
+                    <th style="padding: 12px; text-align: center; color: var(--brown); font-weight: 600; border-bottom: 2px solid var(--gold);">Phủ bì (Ngang x Dài)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; color: var(--text);">1m x 2m</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">100cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">120cm x 215cm</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; color: var(--text);">1m2 x 2m</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">120cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">140cm x 215cm</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; color: var(--text);">1m4 x 2m</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">140cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">160cm x 215cm</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border); background: rgba(201, 166, 107, 0.05);">
+                    <td style="padding: 12px; color: var(--text); font-weight: 600;">1m6 x 2m ⭐</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">160cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">180cm x 215cm</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; color: var(--text);">1m8 x 2m</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">180cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">200cm x 215cm</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; color: var(--text);">2m x 2m</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">200cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">220cm x 215cm</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px; color: var(--text);">2m2 x 2m</td>
+                    <td style="padding: 12px; text-align: center; color: var(--text);">220cm x 200cm</td>
+                    <td style="padding: 12px; text-align: center; color: var(--gold); font-weight: 600;">240cm x 215cm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top: 15px; text-align: center; color: var(--text-muted); font-size: 13px; font-style: italic;">⭐ Size phổ biến nhất</p>
+          </div>
+
+          <!-- Hình ảnh quy cách -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Size 1 -->
+            <div style="background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); border: 1px solid rgba(201, 166, 107, 0.1);">
+              <div style="position: relative; background: linear-gradient(145deg, #faf9f7, #f5f3f0); padding: 20px;">
+                <img src="assets/images/giuongbocda/size_1.jpg" alt="Quy cách kích thước 1" style="width: 100%; height: auto; border-radius: var(--radius); display: block;" />
+              </div>
+              <div style="padding: 20px;">
+                <h4 style="font-size: 16px; font-weight: 700; color: var(--brown); margin-bottom: 10px;">Quy Cách Nhìn Nghiêng</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0;">Chiều cao thành giường 30cm, đầu giường 100cm. Phủ bì vượt ra ngoài lọt lòng: chiều ngang +20cm, chiều dài +15cm.</p>
+              </div>
+            </div>
+
+            <!-- Size 2 -->
+            <div style="background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); border: 1px solid rgba(201, 166, 107, 0.1);">
+              <div style="position: relative; background: linear-gradient(145deg, #faf9f7, #f5f3f0); padding: 20px;">
+                <img src="assets/images/giuongbocda/size_2.jpg" alt="Quy cách kích thước 2" style="width: 100%; height: auto; border-radius: var(--radius); display: block;" />
+              </div>
+              <div style="padding: 20px;">
+                <h4 style="font-size: 16px; font-weight: 700; color: var(--brown); margin-bottom: 10px;">Quy Cách Nhìn Trên</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0;">Kích thước lọt lòng từ 1m đến 2m2 (7 size). Phủ bì toàn bộ giường rộng hơn lọt lòng 20cm mỗi bên, dài hơn 15cm.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lưu ý -->
+          <div style="margin-top: 30px; padding: 20px; background: linear-gradient(145deg, rgba(201, 166, 107, 0.08), rgba(201, 166, 107, 0.02)); border-radius: var(--radius); border-left: 4px solid var(--gold);">
+            <p style="color: var(--text); font-size: 14px; line-height: 1.7; margin: 0;">
+              <strong style="color: var(--gold);">💡 Lưu ý:</strong> Kích thước "lọt lòng" là kích thước nệm bạn sử dụng. Kích thước "phủ bì" là kích thước tổng thể của giường bao gồm phần bọc da. Hãy đo kỹ không gian phòng của bạn trước khi đặt hàng.
+            </p>
           </div>
         </div>
       </div>
