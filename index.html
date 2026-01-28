@@ -1833,19 +1833,15 @@
         if (!selectedSize) return 3699000; // default price
 
         const basePrice = parseInt(selectedSize.dataset.price);
-        const activeModel = document.querySelector(".model-btn.active");
-        const modelNumber = activeModel ? activeModel.dataset.model : "2";
-
+        
         // Add 500k if model is "3" (Trần)
-        const finalPrice = modelNumber === "3" ? basePrice + 500000 : basePrice;
+        const finalPrice = currentModel === "3" ? basePrice + 500000 : basePrice;
         return finalPrice;
       }
 
       // Function to update size option prices display
       function updateSizeOptionPrices() {
-        const activeModel = document.querySelector(".model-btn.active");
-        const modelNumber = activeModel ? activeModel.dataset.model : "2";
-        const surcharge = modelNumber === "3" ? 500000 : 0;
+        const surcharge = currentModel === "3" ? 500000 : 0;
 
         // Update all size option price displays
         sizeInputs.forEach((input) => {
