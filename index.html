@@ -155,9 +155,9 @@
                 <button
                   class="model-btn"
                   data-model="3"
-                  data-model-name="Mẫu 3 - Trơn"
+                  data-model-name="Mẫu 3 - Trần"
                 >
-                  Trơn
+                  Trần
                 </button>
               </div>
             </div>
@@ -1363,7 +1363,7 @@
           },
         },
         3: {
-          name: "Mẫu 3 - Trơn",
+          name: "Mẫu 3 - Trần",
           images: {
             gray: "assets/images/giuongbocda/3.1.jpg",
             "dark-gray": "assets/images/giuongbocda/3.2.jpg",
@@ -1573,7 +1573,7 @@
         const activeModel = document.querySelector(".model-btn.active");
         const modelNumber = activeModel ? activeModel.dataset.model : "2";
 
-        // Add 500k if model is "3" (Trơn)
+        // Add 500k if model is "3" (Trần)
         const finalPrice = modelNumber === "3" ? basePrice + 500000 : basePrice;
         return finalPrice;
       }
