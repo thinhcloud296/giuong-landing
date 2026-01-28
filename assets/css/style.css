@@ -908,8 +908,12 @@ a {
 
 @media (max-width: 968px) {
   .thumbnail {
-    flex: 0 0 calc((100% - 24px) / 3); /* Show 3 thumbnails on tablet */
-    min-width: calc((100% - 24px) / 3);
+    flex: 0 0 calc((100% - 24px) / 3.5); /* Show 3.5 thumbnails on tablet để người dùng biết có thể vuốt */
+    min-width: calc((100% - 24px) / 3.5);
+  }
+  
+  .thumbnail img {
+    height: 85px;
   }
   
   .size-section-below-image .size-grid {
@@ -919,24 +923,64 @@ a {
 
 @media (max-width: 640px) {
   .thumbnail {
-    flex: 0 0 calc((100% - 24px) / 3); /* Show 3 thumbnails on mobile */
-    min-width: calc((100% - 24px) / 3);
+    flex: 0 0 calc((100% - 16px) / 2.5); /* Show 2.5 thumbnails on mobile để người dùng biết có thể vuốt */
+    min-width: calc((100% - 16px) / 2.5);
+    border-width: 3px; /* Tăng border để dễ nhìn khi active */
+    touch-action: manipulation; /* Cải thiện touch response */
   }
   
   .thumbnail img {
-    height: 75px;
+    height: 90px; /* Tăng chiều cao để dễ nhìn hơn */
+    padding: 10px;
   }
   
   .thumbnail-info {
-    padding: 4px 2px;
+    padding: 8px 4px; /* Tăng padding để dễ tap */
   }
   
   .thumbnail-name {
-    font-size: 10px;
+    font-size: 11px;
+    font-weight: 700;
   }
   
   .thumbnail-color {
-    font-size: 9px;
+    font-size: 10px;
+  }
+  
+  /* Tăng vùng tap cho thumbnail trên mobile */
+  .thumbnail::before {
+    content: '';
+    position: absolute;
+    inset: -8px; /* Mở rộng vùng tap ra ngoài 8px */
+    z-index: 1;
+  }
+  
+  /* Đảm bảo nội dung thumbnail vẫn hiển thị đúng */
+  .thumbnail img,
+  .thumbnail-info {
+    position: relative;
+    z-index: 2;
+    pointer-events: none; /* Để touch event đi qua thumbnail container */
+  }
+  
+  /* Visual feedback khi tap */
+  .thumbnail:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Tăng kích thước gradient indicators trên mobile */
+  .thumbnail-slider::before,
+  .thumbnail-slider::after {
+    width: 50px;
+  }
+  
+  /* Tăng kích thước arrow hints trên mobile */
+  .slider-hint {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    font-weight: bold;
   }
   
   .size-section-below-image .size-grid {
@@ -949,6 +993,44 @@ a {
   
   .size-section-below-image .size-btn .price {
     font-size: 11px;
+  }
+  
+  /* Cải thiện main image trên mobile */
+  .main-product-image img {
+    height: 300px;
+    padding: 20px;
+  }
+  
+  /* Tăng gap giữa các thumbnail để dễ tap */
+  .thumbnail-images {
+    gap: 12px;
+  }
+  
+  /* Cải thiện active state trên mobile */
+  .thumbnail.active {
+    border-width: 3px;
+    box-shadow:
+      0 0 0 4px rgba(201, 166, 107, 0.25),
+      0 8px 25px rgba(201, 166, 107, 0.3);
+    transform: scale(1);
+  }
+  
+  /* Tắt hover effect trên mobile */
+  .thumbnail:hover {
+    border-color: transparent;
+    box-shadow: none;
+  }
+  
+  .thumbnail.active:hover {
+    border-color: var(--gold);
+    box-shadow:
+      0 0 0 4px rgba(201, 166, 107, 0.25),
+      0 8px 25px rgba(201, 166, 107, 0.3);
+  }
+  
+  /* Cải thiện slider container */
+  .thumbnail-slider {
+    touch-action: pan-x; /* Chỉ cho phép scroll ngang */
   }
 }
 
@@ -1305,15 +1387,21 @@ a {
   }
   .main-product-image img {
     height: 350px;
+    padding: 25px;
   }
   .thumbnail img {
-    height: 80px;
+    height: 85px;
   }
   .product-name {
     font-size: 1.8rem;
   }
   .price-current {
     font-size: 2rem;
+  }
+  
+  /* Cải thiện thumbnail slider container trên tablet */
+  .thumbnail-slider-container {
+    margin-bottom: 20px;
   }
 }
 

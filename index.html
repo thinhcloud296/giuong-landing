@@ -287,34 +287,6 @@
               <span class="price-current" id="displayPrice">3.699.000đ</span>
               <span class="price-badge">Giảm 33%</span>
             </div>
-
-            <!-- Model Selector -->
-            <div class="model-section">
-              <div class="section-label">Chọn mẫu:</div>
-              <div class="model-buttons">
-                <button
-                  class="model-btn active"
-                  data-model="1"
-                  data-model-name="Mẫu 1 - Sọc Dọc"
-                >
-                  Sọc Dọc
-                </button>
-                <button
-                  class="model-btn"
-                  data-model="2"
-                  data-model-name="Mẫu 2 - Vuông"
-                >
-                  Vuông
-                </button>
-                <button
-                  class="model-btn"
-                  data-model="3"
-                  data-model-name="Mẫu 3 - Trần"
-                >
-                  Trần
-                </button>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -1392,7 +1364,6 @@
 
       // ===== PRODUCT DISPLAY =====
       const mainImage = document.getElementById("mainProductImage");
-      const modelBtns = document.querySelectorAll(".model-btn");
       const thumbnails = document.querySelectorAll(".thumbnail");
       const selectedThumb = document.getElementById("selectedThumb");
       const selectedName = document.getElementById("selectedName");
@@ -1483,6 +1454,7 @@
 
       // Touch events for swipe
       let hasMoved = false;
+      let touchStartTime = 0;
 
       thumbnailSlider.addEventListener(
         "touchstart",
@@ -1490,6 +1462,7 @@
           touchStartX = e.touches[0].clientX;
           isDragging = true;
           hasMoved = false;
+          touchStartTime = Date.now();
           startTranslateX = currentTranslateX;
           thumbnailImagesContainer.style.transition = "none";
         },
@@ -1503,8 +1476,8 @@
           const touchX = e.touches[0].clientX;
           const diff = touchX - touchStartX;
 
-          // Nếu di chuyển quá 10px thì đánh dấu là đang swipe
-          if (Math.abs(diff) > 10) {
+          // Nếu di chuyển quá 15px thì đánh dấu là đang swipe (tăng từ 10px lên 15px)
+          if (Math.abs(diff) > 15) {
             hasMoved = true;
           }
 
@@ -1533,7 +1506,13 @@
         isDragging = false;
 
         const diff = touchEndX - touchStartX;
+        const touchDuration = Date.now() - touchStartTime;
         const { thumbnailWidth } = getSliderMetrics();
+
+        // Nếu touch duration < 200ms và di chuyển < 15px thì coi như là tap, không phải swipe
+        if (touchDuration < 200 && Math.abs(diff) < 15) {
+          hasMoved = false;
+        }
 
         // Swipe threshold - nếu vuốt quá 50px thì chuyển slide
         if (Math.abs(diff) > 50) {
@@ -1547,6 +1526,12 @@
         updateSlider(true);
         touchStartX = 0;
         touchEndX = 0;
+        touchStartTime = 0;
+        
+        // Reset hasMoved sau 100ms để đảm bảo click event được xử lý
+        setTimeout(() => {
+          hasMoved = false;
+        }, 100);
       });
 
       // Mouse drag support for desktop
@@ -1613,60 +1598,68 @@
         updateSlider(false);
       });
 
-      // Model button click - đổi mẫu
-      modelBtns.forEach((btn) => {
-        btn.addEventListener("click", function () {
-          modelBtns.forEach((b) => b.classList.remove("active"));
-          this.classList.add("active");
-
-          currentModel = this.dataset.model;
-          updateProductImage();
-          updateOrderPanel();
-          updateActiveThumbnail();
-          updateSizeOptionPrices();
-          updateAllPrices();
-        });
-      });
-
-      // Thumbnail click - đổi mẫu và màu
+      // Thumbnail click/tap - đổi mẫu và màu
       thumbnails.forEach((thumb) => {
+        // Xử lý click cho desktop
         thumb.addEventListener("click", function (e) {
           // Nếu đang swipe thì không xử lý click
           if (hasMoved) {
-            hasMoved = false;
             return;
           }
 
-          const model = this.dataset.model;
-          const color = this.dataset.color;
+          selectThumbnail(this);
+        });
 
-          // Cập nhật model và màu
-          currentModel = model;
-          currentColor = color;
+        // Xử lý touch cho mobile - chính xác hơn
+        let thumbTouchStartX = 0;
+        let thumbTouchStartY = 0;
+        let thumbTouchStartTime = 0;
 
-          // Cập nhật model buttons
-          modelBtns.forEach((b) => b.classList.remove("active"));
-          const activeModelBtn = document.querySelector(
-            `.model-btn[data-model="${model}"]`,
-          );
-          if (activeModelBtn) activeModelBtn.classList.add("active");
+        thumb.addEventListener("touchstart", function (e) {
+          thumbTouchStartX = e.touches[0].clientX;
+          thumbTouchStartY = e.touches[0].clientY;
+          thumbTouchStartTime = Date.now();
+        }, { passive: true });
 
-          // Cập nhật thumbnail active
-          thumbnails.forEach((t) => t.classList.remove("active"));
-          this.classList.add("active");
-
-          // Cập nhật ảnh và các thông tin
-          updateProductImage();
-          updateOrderPanel();
-          updateSizeOptionPrices();
-          updateAllPrices();
+        thumb.addEventListener("touchend", function (e) {
+          const touchEndTime = Date.now();
+          const touchDuration = touchEndTime - thumbTouchStartTime;
           
-          // Reset hasMoved sau khi xử lý xong
-          setTimeout(() => {
-            hasMoved = false;
-          }, 100);
+          // Lấy vị trí cuối của touch (nếu có changedTouches)
+          const touchEndX = e.changedTouches[0].clientX;
+          const touchEndY = e.changedTouches[0].clientY;
+          
+          // Tính khoảng cách di chuyển
+          const moveX = Math.abs(touchEndX - thumbTouchStartX);
+          const moveY = Math.abs(touchEndY - thumbTouchStartY);
+          
+          // Nếu touch duration < 300ms và di chuyển < 10px thì coi như là tap
+          if (touchDuration < 300 && moveX < 10 && moveY < 10) {
+            e.preventDefault(); // Ngăn click event duplicate
+            selectThumbnail(this);
+          }
         });
       });
+
+      // Function để select thumbnail
+      function selectThumbnail(thumb) {
+        const model = thumb.dataset.model;
+        const color = thumb.dataset.color;
+
+        // Cập nhật model và màu
+        currentModel = model;
+        currentColor = color;
+
+        // Cập nhật thumbnail active
+        thumbnails.forEach((t) => t.classList.remove("active"));
+        thumb.classList.add("active");
+
+        // Cập nhật ảnh và các thông tin
+        updateProductImage();
+        updateOrderPanel();
+        updateSizeOptionPrices();
+        updateAllPrices();
+      }
 
       // Update active thumbnail based on current model and color
       function updateActiveThumbnail() {
