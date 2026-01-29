@@ -306,17 +306,25 @@ body {
 }
 
 .contact-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  gap: 8px;
   font-size: 1.2rem;
   font-weight: 600;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.contact-item span {
+  white-space: nowrap;
 }
 
 .contact-item a {
   color: var(--gold);
   text-decoration: none;
   transition: all 0.3s ease;
+  word-break: break-all;
 }
 
 .contact-item a:hover {
@@ -371,6 +379,25 @@ body {
   }
 
   .contact-section {
-    padding: 40px 25px;
+    padding: 40px 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    gap: 15px;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+    gap: 6px;
+  }
+
+  .contact-item span,
+  .contact-item a {
+    display: inline;
   }
 }
