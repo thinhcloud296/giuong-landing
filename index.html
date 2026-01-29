@@ -853,26 +853,6 @@
               </div>
             </div>
           </form>
-
-          <!-- Success Message -->
-          <div class="success-message" id="successMessage">
-            <h3>Đặt hàng thành công!</h3>
-            <p>
-              Hanabedding sẽ liên hệ xác nhận trong
-              <strong>30 phút</strong> (giờ hành chính).
-            </p>
-            <div class="success-actions">
-              <a
-                href="https://zalo.me/0764265775"
-                target="_blank"
-                class="btn btn-primary zalo-btn"
-                >💬 Nhắn Zalo</a
-              >
-              <button type="button" class="btn btn-outline" id="newOrderBtn">
-                Đặt đơn mới
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -2091,20 +2071,6 @@
         updateAllPrices();
       }
 
-      // Update active thumbnail based on current model and color
-      function updateActiveThumbnail() {
-        thumbnails.forEach((t) => {
-          if (
-            t.dataset.model === currentModel &&
-            t.dataset.color === currentColor
-          ) {
-            t.classList.add("active");
-          } else {
-            t.classList.remove("active");
-          }
-        });
-      }
-
       function updateProductImage() {
         const imageSrc = products[currentModel].images[currentColor];
         mainImage.src = imageSrc;
@@ -2149,7 +2115,6 @@
       // ===== MODAL HANDLING =====
       const orderModal = document.getElementById("orderModal");
       const modalClose = document.getElementById("modalClose");
-      const ctaBtn = document.querySelector(".btn-cta");
       const openModalBtns = document.querySelectorAll(".open-modal-btn");
 
       function openModal() {
@@ -2163,15 +2128,7 @@
         document.body.style.overflow = "";
       }
 
-      // Open modal from CTA button
-      if (ctaBtn) {
-        ctaBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-          openModal();
-        });
-      }
-
-      // Open modal from other buttons
+      // Open modal from buttons
       openModalBtns.forEach((btn) => {
         btn.addEventListener("click", function (e) {
           e.preventDefault();
@@ -2388,7 +2345,7 @@
             // Close modal and show success
             closeModal();
             showToast(
-              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn ngay.",
+              "Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn ngay.",
               "success",
             );
             form.reset();
@@ -2497,7 +2454,7 @@
 
             closeModal();
             showToast(
-              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn trong 30 phút.",
+              "Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn ngay.",
               "success",
             );
             modalForm.reset();
