@@ -663,6 +663,22 @@ a {
   top: 110px;
 }
 
+/* Mobile Section Title - Chỉ hiển thị trên điện thoại */
+.mobile-section-title {
+  display: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mobile-section-title {
+    display: block;
+  }
+}
+
 .main-product-image {
   width: 100%;
   border-radius: var(--radius-xl);
