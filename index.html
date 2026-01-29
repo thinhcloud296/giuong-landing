@@ -855,7 +855,6 @@
 
           <!-- Success Message -->
           <div class="success-message" id="successMessage">
-            <div class="success-icon">✓</div>
             <h3>Đặt hàng thành công!</h3>
             <p>
               Hanabedding sẽ liên hệ xác nhận trong
@@ -1703,7 +1702,6 @@
 
     <script>
       // ===== CONFIGURATION =====
-      // ⚠️ THAY URL NÀY BẰNG URL TỪ GOOGLE APPS SCRIPT DEPLOY CỦA BẠN
       const SCRIPT_URL =
         "https://script.google.com/macros/s/AKfycbwj120g3lzZRxZu9uUlgWUSTk5l5FdqigM9jNGGrxdElczY9B2JvDjMSDv_Kp6_6UaC/exec";
 
@@ -1720,7 +1718,6 @@
           });
           return { success: true };
         } catch (error) {
-          console.error("Submit error:", error);
           throw error;
         }
       }
@@ -2369,11 +2366,6 @@
             ghiChu: noteValue,
           };
 
-          // Debug logging
-          console.log("=== DEBUG: Form Submission ===");
-          console.log("SCRIPT_URL:", SCRIPT_URL);
-          console.log("Form Data:", formData);
-
           // Show loading
           submitBtn.classList.add("loading");
           submitBtn.disabled = true;
@@ -2384,28 +2376,22 @@
             SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
           ) {
             showToast("⚠️ Chưa cấu hình URL backend!", "error");
-            console.error("❌ SCRIPT_URL chưa được cấu hình!");
             submitBtn.classList.remove("loading");
             submitBtn.disabled = false;
             return;
           }
 
           try {
-            console.log("📤 Đang gửi đơn hàng...");
-
             await submitToGoogleScript(formData);
-
-            console.log("✅ Đã gửi request thành công!");
 
             // Close modal and show success
             closeModal();
             showToast(
-              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn trong 30 phút.",
+              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn ngay.",
               "success",
             );
             form.reset();
           } catch (error) {
-            console.error("❌ Error:", error);
             showToast("Có lỗi xảy ra. Vui lòng thử lại!", "error");
           } finally {
             submitBtn.classList.remove("loading");
@@ -2432,7 +2418,6 @@
 
         modalForm.addEventListener("submit", async (e) => {
           e.preventDefault();
-          console.log("=== MODAL FORM SUBMIT ===");
 
           // Check honeypot
           const honeypot = document.getElementById("modalWebsite");
@@ -2491,8 +2476,6 @@
             ghiChu: "",
           };
 
-          console.log("Form Data:", formData);
-
           // Show loading
           modalSubmitBtn.classList.add("loading");
           modalSubmitBtn.disabled = true;
@@ -2509,9 +2492,7 @@
           }
 
           try {
-            console.log("📤 Đang gửi đơn hàng...");
             await submitToGoogleScript(formData);
-            console.log("✅ Đã gửi request thành công!");
 
             closeModal();
             showToast(
@@ -2520,7 +2501,6 @@
             );
             modalForm.reset();
           } catch (error) {
-            console.error("❌ Error:", error);
             showToast("Có lỗi xảy ra. Vui lòng thử lại!", "error");
           } finally {
             modalSubmitBtn.classList.remove("loading");

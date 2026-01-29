@@ -2227,35 +2227,28 @@ a {
   display: none;
   text-align: center;
   padding: 48px 24px;
+  background: linear-gradient(135deg, #fdfcfb 0%, #faf9f7 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gold-light);
 }
 
 .success-message.show {
   display: block;
 }
 
-.success-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--success);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-  font-size: 40px;
-  color: white;
-}
-
 .success-message h3 {
-  font-size: 24px;
-  color: var(--brown);
-  margin-bottom: 12px;
+  font-size: 26px;
+  color: var(--gold-dark);
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .success-message p {
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   font-size: 16px;
+  line-height: 1.7;
 }
 
 .success-actions {
@@ -3420,12 +3413,6 @@ body {
 
   .form-benefit {
     font-size: 13px;
-  }
-
-  .success-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 34px;
   }
 
   .success-message h3 {
