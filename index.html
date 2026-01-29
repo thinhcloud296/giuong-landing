@@ -1704,7 +1704,8 @@
     <script>
       // ===== CONFIGURATION =====
       // ⚠️ THAY URL NÀY BẰNG URL TỪ GOOGLE APPS SCRIPT DEPLOY CỦA BẠN
-      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqA058zktR1dieYQL0uJUWkWmop6XrwpdxPffNAgQLoXt58-UejRe8yfdnBYSKB1Fx/exec";
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwj120g3lzZRxZu9uUlgWUSTk5l5FdqigM9jNGGrxdElczY9B2JvDjMSDv_Kp6_6UaC/exec";
 
       // ===== HELPER: Submit to Google Apps Script =====
       async function submitToGoogleScript(data) {
@@ -2378,7 +2379,10 @@
           submitBtn.disabled = true;
 
           // Kiểm tra URL đã cấu hình chưa
-          if (!SCRIPT_URL || SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+          if (
+            !SCRIPT_URL ||
+            SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
+          ) {
             showToast("⚠️ Chưa cấu hình URL backend!", "error");
             console.error("❌ SCRIPT_URL chưa được cấu hình!");
             submitBtn.classList.remove("loading");
@@ -2438,7 +2442,9 @@
           }
 
           // Validate phone
-          const phone = modalPhoneInput ? modalPhoneInput.value.replace(/\s/g, "") : "";
+          const phone = modalPhoneInput
+            ? modalPhoneInput.value.replace(/\s/g, "")
+            : "";
           if (!validatePhone(phone)) {
             if (modalPhoneInput) {
               modalPhoneInput.classList.add("error");
@@ -2465,7 +2471,9 @@
           }
 
           // Get selected product & size
-          const selectedSize = document.querySelector('input[name="bedSize"]:checked');
+          const selectedSize = document.querySelector(
+            'input[name="bedSize"]:checked',
+          );
           const sizeText = selectedSize ? selectedSize.value : "1m6 x 2m";
           const priceValue = calculatePrice();
 
@@ -2490,7 +2498,10 @@
           modalSubmitBtn.disabled = true;
 
           // Check URL
-          if (!SCRIPT_URL || SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+          if (
+            !SCRIPT_URL ||
+            SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
+          ) {
             showToast("⚠️ Chưa cấu hình URL backend!", "error");
             modalSubmitBtn.classList.remove("loading");
             modalSubmitBtn.disabled = false;
