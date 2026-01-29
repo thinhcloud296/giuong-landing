@@ -2244,9 +2244,8 @@ a {
   display: none;
   text-align: center;
   padding: 48px 24px;
-  background: linear-gradient(135deg, #fdfcfb 0%, #faf9f7 100%);
+  background: var(--white);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--gold-light);
 }
 
 .success-message.show {
@@ -2255,7 +2254,7 @@ a {
 
 .success-message h3 {
   font-size: 26px;
-  color: var(--gold-dark);
+  color: var(--brown);
   margin-bottom: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
