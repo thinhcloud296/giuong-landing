@@ -237,13 +237,31 @@ Thay thế file ảnh trong `assets/images/giuongbocda/` với tên file tương
 
 ### 5. Cấu Hình Form Submission
 
-Tìm dòng này trong JavaScript:
+**Backend: Google Sheets Integration**
+
+Tìm dòng này trong JavaScript (~dòng 1640):
 
 ```javascript
 const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
 ```
 
-Thay bằng URL Google Apps Script hoặc API endpoint của bạn.
+Thay bằng URL Google Apps Script của bạn.
+
+**📖 Hướng dẫn chi tiết:** Xem file `SETUP_BACKEND.md`
+
+**Các bước:**
+1. Tạo Google Sheet với header: `Thời gian | Họ tên | SĐT | Địa chỉ | Sản phẩm | Màu sắc | Kích thước | Số lượng | Đơn giá | Tổng tiền`
+2. Setup Apps Script (code trong `GOOGLE_APPS_SCRIPT.md`)
+3. Deploy as Web App
+4. Copy URL và paste vào `SCRIPT_URL`
+5. Deploy website lại
+
+**Dữ liệu ghi vào Sheet:**
+- Thời gian (tự động, múi giờ VN)
+- Thông tin khách hàng (họ tên, SĐT, địa chỉ)
+- Thông tin sản phẩm (mẫu, màu, size)
+- Số lượng (mặc định = 1)
+- Đơn giá và tổng tiền (tự động tính)
 
 ---
 
@@ -399,10 +417,10 @@ Dự án này được phát hành dưới giấy phép MIT. Xem file `LICENSE` 
 ## 📞 Liên Hệ
 
 **Hanabedding**
-- 📧 Email: contact@hanabedding.com
+- 📧 Email: contact@hanabedding.vn
 - 📱 Hotline: 0123.456.789
 - 💬 Zalo: 0123.456.789
-- 🌐 Website: https://hanabedding.com
+- 🌐 Website: https://hanabedding.vn
 
 ---
 
