@@ -1623,12 +1623,12 @@
         </div>
 
         <div class="modal-body">
-          <form id="orderForm">
+          <form id="modalOrderForm">
             <div class="hp-field">
               <input
                 type="text"
                 name="website"
-                id="website"
+                id="modalWebsite"
                 tabindex="-1"
                 autocomplete="off"
               />
@@ -1637,7 +1637,7 @@
             <div class="modal-form-group">
               <input
                 type="text"
-                id="name"
+                id="modalName"
                 name="name"
                 placeholder="Họ và tên"
                 required
@@ -1647,7 +1647,7 @@
             <div class="modal-form-group">
               <input
                 type="tel"
-                id="phone"
+                id="modalPhone"
                 name="phone"
                 placeholder="Số điện thoại"
                 required
@@ -1657,7 +1657,7 @@
             <div class="modal-form-group">
               <input
                 type="text"
-                id="address"
+                id="modalAddress"
                 name="address"
                 placeholder="Địa chỉ nhận hàng chi tiết"
                 required
@@ -1683,7 +1683,7 @@
               </div>
             </div>
 
-            <button type="submit" class="modal-submit-btn" id="submitBtn">
+            <button type="submit" class="modal-submit-btn" id="modalSubmitBtn">
               <span class="btn-text">HOÀN TẤT ĐẶT HÀNG</span>
               <span class="spinner"></span>
             </button>
@@ -1703,22 +1703,25 @@
 
     <script>
       // ===== CONFIGURATION =====
-      const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbx9TNHKuGWwo-ZGyuR763JNfVa7bbScSELI-G1tbNHs62ekyfKaJn3R_C-RgPC17sU/exec";
+      // ⚠️ THAY URL NÀY BẰNG URL TỪ GOOGLE APPS SCRIPT DEPLOY CỦA BẠN
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqA058zktR1dieYQL0uJUWkWmop6XrwpdxPffNAgQLoXt58-UejRe8yfdnBYSKB1Fx/exec";
 
       // ===== HELPER: Submit to Google Apps Script =====
       async function submitToGoogleScript(data) {
-        const response = await fetch(SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          cache: "no-cache",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-          redirect: "follow",
-        });
-        return { success: true };
+        try {
+          await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+          return { success: true };
+        } catch (error) {
+          console.error("Submit error:", error);
+          throw error;
+        }
       }
 
       // ===== UTILITY FUNCTIONS =====
@@ -2273,11 +2276,19 @@
       });
 
       // ===== FORM HANDLING =====
+      // Form trong order-panel (ẩn trên desktop)
       const form = document.getElementById("orderForm");
       const submitBtn = document.getElementById("submitBtn");
       const phoneInput = document.getElementById("phone");
       const nameInput = document.getElementById("name");
       const addressInput = document.getElementById("address");
+
+      // Form trong modal
+      const modalForm = document.getElementById("modalOrderForm");
+      const modalSubmitBtn = document.getElementById("modalSubmitBtn");
+      const modalPhoneInput = document.getElementById("modalPhone");
+      const modalNameInput = document.getElementById("modalName");
+      const modalAddressInput = document.getElementById("modalAddress");
 
       // Real-time phone validation
       if (phoneInput) {
@@ -2336,76 +2347,173 @@
           const selectedSize = document.querySelector(
             'input[name="bedSize"]:checked',
           );
-          const activeModelBtn = document.querySelector(".model-btn.active");
-          const activeColorOption = document.querySelector(
-            ".color-dot-option.active",
-          );
           const sizeText = selectedSize ? selectedSize.value : "1m6 x 2m";
-          const priceValue = selectedSize
-            ? selectedSize.dataset.price
-            : "3699000";
+          const priceValue = calculatePrice(); // Sử dụng giá đã tính (bao gồm phụ thu mẫu Trần)
 
           // Get note value
           const noteInput = document.getElementById("note");
           const noteValue = noteInput ? noteInput.value.trim() : "";
 
-          // Collect form data for Google Sheets - theo format script cũ
+          // Collect form data - format mới cho Google Apps Script v4
           const formData = {
-            type: "order",
-            name: nameInput ? nameInput.value.trim() : "",
-            phone: phone,
-            address: addressInput ? addressInput.value.trim() : "",
-            items: [
-              {
-                name: products[currentModel].name,
-                color: colorLabels[currentColor],
-                size: sizeText,
-                legs: "",
-                quantity: 1,
-                unitPrice: parseInt(priceValue) || 0,
-              },
-            ],
-            total: parseInt(priceValue) || 0,
-            note: noteValue,
+            hoTen: nameInput ? nameInput.value.trim() : "",
+            sdt: phone,
+            diaChi: addressInput ? addressInput.value.trim() : "",
+            sanPham: "Giường " + products[currentModel].name,
+            mauSac: colorLabels[currentColor],
+            kichThuoc: sizeText,
+            soLuong: 1,
+            donGia: priceValue,
+            tongTien: priceValue,
+            ghiChu: noteValue,
           };
 
           // Debug logging
           console.log("=== DEBUG: Form Submission ===");
           console.log("SCRIPT_URL:", SCRIPT_URL);
           console.log("Form Data:", formData);
-          console.log("Current Model:", currentModel);
-          console.log("Current Color:", currentColor);
 
           // Show loading
           submitBtn.classList.add("loading");
           submitBtn.disabled = true;
 
-          try {
-            console.log(
-              "📤 Sending request to Google Apps Script via hidden form...",
-            );
+          // Kiểm tra URL đã cấu hình chưa
+          if (!SCRIPT_URL || SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+            showToast("⚠️ Chưa cấu hình URL backend!", "error");
+            console.error("❌ SCRIPT_URL chưa được cấu hình!");
+            submitBtn.classList.remove("loading");
+            submitBtn.disabled = false;
+            return;
+          }
 
-            // Sử dụng hidden form để gửi dữ liệu - phương pháp đáng tin cậy nhất
+          try {
+            console.log("📤 Đang gửi đơn hàng...");
+
             await submitToGoogleScript(formData);
 
-            console.log("📥 Request sent successfully!");
+            console.log("✅ Đã gửi request thành công!");
 
             // Close modal and show success
             closeModal();
             showToast(
-              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.",
+              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn trong 30 phút.",
               "success",
             );
             form.reset();
-
-            console.log("✅ Order submitted successfully!");
           } catch (error) {
-            console.error("❌ Error submitting order:", error);
-            console.error("Error details:", error.message);
+            console.error("❌ Error:", error);
             showToast("Có lỗi xảy ra. Vui lòng thử lại!", "error");
           } finally {
             submitBtn.classList.remove("loading");
             submitBtn.disabled = false;
+          }
+        });
+      }
+
+      // ===== MODAL FORM HANDLING =====
+      if (modalForm) {
+        // Real-time phone validation for modal
+        if (modalPhoneInput) {
+          modalPhoneInput.addEventListener("input", () => {
+            if (modalPhoneInput.value.length > 0) {
+              modalPhoneInput.classList.toggle(
+                "error",
+                !validatePhone(modalPhoneInput.value),
+              );
+            } else {
+              modalPhoneInput.classList.remove("error");
+            }
+          });
+        }
+
+        modalForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("=== MODAL FORM SUBMIT ===");
+
+          // Check honeypot
+          const honeypot = document.getElementById("modalWebsite");
+          if (honeypot && honeypot.value) {
+            showToast("Có lỗi xảy ra. Vui lòng thử lại.", "error");
+            return;
+          }
+
+          // Validate phone
+          const phone = modalPhoneInput ? modalPhoneInput.value.replace(/\s/g, "") : "";
+          if (!validatePhone(phone)) {
+            if (modalPhoneInput) {
+              modalPhoneInput.classList.add("error");
+              modalPhoneInput.focus();
+            }
+            showToast("Số điện thoại không hợp lệ!", "error");
+            return;
+          }
+
+          // Check required fields
+          let hasError = false;
+          modalForm.querySelectorAll("input[required]").forEach((field) => {
+            if (!field.value.trim()) {
+              field.classList.add("error");
+              hasError = true;
+            } else {
+              field.classList.remove("error");
+            }
+          });
+
+          if (hasError) {
+            showToast("Vui lòng điền đầy đủ thông tin!", "error");
+            return;
+          }
+
+          // Get selected product & size
+          const selectedSize = document.querySelector('input[name="bedSize"]:checked');
+          const sizeText = selectedSize ? selectedSize.value : "1m6 x 2m";
+          const priceValue = calculatePrice();
+
+          // Collect form data
+          const formData = {
+            hoTen: modalNameInput ? modalNameInput.value.trim() : "",
+            sdt: phone,
+            diaChi: modalAddressInput ? modalAddressInput.value.trim() : "",
+            sanPham: "Giường " + products[currentModel].name,
+            mauSac: colorLabels[currentColor],
+            kichThuoc: sizeText,
+            soLuong: 1,
+            donGia: priceValue,
+            tongTien: priceValue,
+            ghiChu: "",
+          };
+
+          console.log("Form Data:", formData);
+
+          // Show loading
+          modalSubmitBtn.classList.add("loading");
+          modalSubmitBtn.disabled = true;
+
+          // Check URL
+          if (!SCRIPT_URL || SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+            showToast("⚠️ Chưa cấu hình URL backend!", "error");
+            modalSubmitBtn.classList.remove("loading");
+            modalSubmitBtn.disabled = false;
+            return;
+          }
+
+          try {
+            console.log("📤 Đang gửi đơn hàng...");
+            await submitToGoogleScript(formData);
+            console.log("✅ Đã gửi request thành công!");
+
+            closeModal();
+            showToast(
+              "🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn trong 30 phút.",
+              "success",
+            );
+            modalForm.reset();
+          } catch (error) {
+            console.error("❌ Error:", error);
+            showToast("Có lỗi xảy ra. Vui lòng thử lại!", "error");
+          } finally {
+            modalSubmitBtn.classList.remove("loading");
+            modalSubmitBtn.disabled = false;
           }
         });
       }
