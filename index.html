@@ -98,6 +98,43 @@
     <link rel="preload" href="assets/css/style.min.css?v=2" as="style" />
     <link rel="stylesheet" href="assets/css/style.min.css?v=2" />
 
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1538147883919686");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1538147883919686&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
       {
@@ -2073,6 +2110,18 @@
         updateOrderPanel();
         updateSizeOptionPrices();
         updateAllPrices();
+
+        // Facebook Pixel - Track ViewContent event
+        if (typeof fbq !== "undefined") {
+          fbq("track", "ViewContent", {
+            content_name: "Giường " + products[currentModel].name,
+            content_category: "Giường bọc da",
+            content_ids: [currentModel],
+            content_type: "product",
+            value: calculatePrice(),
+            currency: "VND",
+          });
+        }
       }
 
       function updateProductImage() {
@@ -2346,6 +2395,29 @@
           try {
             await submitToGoogleScript(formData);
 
+            // Facebook Pixel - Track Lead/Purchase event
+            if (typeof fbq !== "undefined") {
+              fbq("track", "Lead", {
+                content_name: formData.sanPham,
+                content_category: "Giường bọc da",
+                value: formData.tongTien,
+                currency: "VND",
+              });
+              fbq("track", "Purchase", {
+                content_name: formData.sanPham,
+                content_type: "product",
+                value: formData.tongTien,
+                currency: "VND",
+                contents: [
+                  {
+                    id: currentModel,
+                    quantity: 1,
+                    item_price: formData.donGia,
+                  },
+                ],
+              });
+            }
+
             // Close modal and show success
             closeModal();
             showToast(
@@ -2455,6 +2527,29 @@
 
           try {
             await submitToGoogleScript(formData);
+
+            // Facebook Pixel - Track Lead/Purchase event
+            if (typeof fbq !== "undefined") {
+              fbq("track", "Lead", {
+                content_name: formData.sanPham,
+                content_category: "Giường bọc da",
+                value: formData.tongTien,
+                currency: "VND",
+              });
+              fbq("track", "Purchase", {
+                content_name: formData.sanPham,
+                content_type: "product",
+                value: formData.tongTien,
+                currency: "VND",
+                contents: [
+                  {
+                    id: currentModel,
+                    quantity: 1,
+                    item_price: formData.donGia,
+                  },
+                ],
+              });
+            }
 
             closeModal();
             showToast(

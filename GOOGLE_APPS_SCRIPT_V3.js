@@ -1,6 +1,6 @@
 // =============================================
 // GOOGLE APPS SCRIPT - Hanabedding Order System
-// Version 4.0 - Simple & Working
+// Version 5.0 - With Facebook Conversions API
 // =============================================
 // 
 // HƯỚNG DẪN CÀI ĐẶT:
@@ -22,6 +22,11 @@
 // Tên sheet
 const SHEET_NAME = 'DonHang';
 
+// ===== FACEBOOK CONVERSIONS API CONFIG =====
+const FB_PIXEL_ID = '1538147883919686';
+const FB_ACCESS_TOKEN = 'EAARpTsjUBtgBQloWDxzlkNQaQmKDa2yxTyfe0xe9FazNned1bXzIyfwOKTjWnBqgc1t1otZALgeLrhdEWYgiYNZCUPeFPe1rIyes8BGVF4sSYtP7GfEwkOoMeem7TVGMzbjXEleB5CfaS6RPkpf9TYwV63qG93ywAZCroha4cKgbZC87coYezjieyou6ZBQZDZD';
+const FB_API_VERSION = 'v18.0';
+
 // ===== XỬ LÝ POST REQUEST =====
 function doPost(e) {
   // Log để debug
@@ -38,6 +43,14 @@ function doPost(e) {
     // Lưu vào sheet
     const result = saveOrder(data);
     Logger.log('Save result: ' + JSON.stringify(result));
+    
+    // Gửi event đến Facebook Conversions API
+    try {
+      sendFacebookConversionEvent(data);
+      Logger.log('Facebook CAPI: Event sent successfully');
+    } catch (fbError) {
+      Logger.log('Facebook CAPI Error: ' + fbError.toString());
+    }
     
     // Response
     return ContentService
@@ -65,7 +78,7 @@ function doGet(e) {
   return ContentService
     .createTextOutput(JSON.stringify({
       success: true,
-      message: 'Hanabedding API v4.0 is working!',
+      message: 'Hanabedding API v5.0 with Facebook CAPI is working!',
       time: new Date().toLocaleString('vi-VN')
     }))
     .setMimeType(ContentService.MimeType.JSON);
@@ -183,6 +196,139 @@ function setupSheet() {
   
   Logger.log('✅ Sheet đã được tạo thành công!');
   SpreadsheetApp.getUi().alert('✅ Sheet "DonHang" đã được tạo thành công!');
+}
+
+// ===== FACEBOOK CONVERSIONS API =====
+function sendFacebookConversionEvent(data) {
+  const url = `https://graph.facebook.com/${FB_API_VERSION}/${FB_PIXEL_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
+  
+  // Hash phone number for privacy (SHA256)
+  const phone = data.sdt || data.phone || '';
+  const hashedPhone = hashSHA256(formatPhoneE164(phone));
+  
+  // Hash name for privacy
+  const name = data.hoTen || data.name || '';
+  const hashedName = hashSHA256(name.toLowerCase().trim());
+  
+  // Get product info
+  const sanPham = data.sanPham || '';
+  const tongTien = data.tongTien || data.donGia || 0;
+  
+  // Create event data
+  const eventData = {
+    data: [
+      {
+        event_name: 'Purchase',
+        event_time: Math.floor(Date.now() / 1000),
+        action_source: 'website',
+        event_source_url: 'https://hanabedding.vn',
+        user_data: {
+          ph: [hashedPhone],
+          fn: [hashedName],
+          country: [hashSHA256('vn')],
+          client_user_agent: 'GoogleAppsScript/1.0'
+        },
+        custom_data: {
+          currency: 'VND',
+          value: tongTien,
+          content_name: sanPham,
+          content_category: 'Giường bọc da',
+          content_type: 'product',
+          contents: [
+            {
+              id: sanPham,
+              quantity: 1,
+              item_price: tongTien
+            }
+          ]
+        }
+      },
+      {
+        event_name: 'Lead',
+        event_time: Math.floor(Date.now() / 1000),
+        action_source: 'website',
+        event_source_url: 'https://hanabedding.vn',
+        user_data: {
+          ph: [hashedPhone],
+          fn: [hashedName],
+          country: [hashSHA256('vn')],
+          client_user_agent: 'GoogleAppsScript/1.0'
+        },
+        custom_data: {
+          currency: 'VND',
+          value: tongTien,
+          content_name: sanPham,
+          content_category: 'Giường bọc da'
+        }
+      }
+    ]
+  };
+  
+  // Send to Facebook
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(eventData),
+    muteHttpExceptions: true
+  };
+  
+  const response = UrlFetchApp.fetch(url, options);
+  const responseCode = response.getResponseCode();
+  const responseText = response.getContentText();
+  
+  Logger.log('Facebook CAPI Response Code: ' + responseCode);
+  Logger.log('Facebook CAPI Response: ' + responseText);
+  
+  if (responseCode !== 200) {
+    throw new Error('Facebook CAPI Error: ' + responseText);
+  }
+  
+  return JSON.parse(responseText);
+}
+
+// Hash SHA256 for Facebook CAPI
+function hashSHA256(input) {
+  if (!input) return '';
+  const rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, input);
+  return rawHash.map(byte => ('0' + (byte & 0xFF).toString(16)).slice(-2)).join('');
+}
+
+// Format phone to E.164 (Vietnam)
+function formatPhoneE164(phone) {
+  if (!phone) return '';
+  // Remove all non-digits
+  let cleaned = phone.replace(/\D/g, '');
+  // Convert 0xxx to 84xxx
+  if (cleaned.startsWith('0')) {
+    cleaned = '84' + cleaned.substring(1);
+  }
+  // Add + if not present
+  if (!cleaned.startsWith('84')) {
+    cleaned = '84' + cleaned;
+  }
+  return cleaned;
+}
+
+// Test Facebook CAPI
+function testFacebookCAPI() {
+  const testData = {
+    hoTen: 'Test CAPI User',
+    sdt: '0764265775',
+    diaChi: '123 Test Address',
+    sanPham: 'Giường Sọc Dọc',
+    mauSac: 'Xám',
+    kichThuoc: '1m6 x 2m',
+    tongTien: 3699000
+  };
+  
+  try {
+    const result = sendFacebookConversionEvent(testData);
+    Logger.log('✅ Facebook CAPI Test Success: ' + JSON.stringify(result));
+    SpreadsheetApp.getUi().alert('✅ Facebook CAPI Test thành công!\n\nResponse: ' + JSON.stringify(result));
+  } catch (error) {
+    Logger.log('❌ Facebook CAPI Test Error: ' + error.toString());
+    SpreadsheetApp.getUi().alert('❌ Facebook CAPI Test lỗi!\n\n' + error.toString());
+  }
 }
 
 // ===== TEST FUNCTIONS =====
